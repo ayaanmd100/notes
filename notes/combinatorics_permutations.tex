@@ -1,30 +1,33 @@
 =====================================
-COMBINATORICS AND PROBABILITY
+5. COMBINATORICS AND PROBABILITY
 =====================================
 
-36. Permutations  (ordered, r chosen from n)
-$$ P(n,r) = \frac{n!}{(n-r)!} $$
+Permutations (ordered, r chosen from n):
+$$P(n,r) = \frac{n!}{(n-r)!}$$
 
-37. Combinations  (unordered, r chosen from n)
-$$ \binom{n}{r} = \frac{n!}{r!\,(n-r)!} $$
+Combinations (unordered, r chosen from n):
+$$\binom{n}{r} = \frac{n!}{r!(n-r)!}$$
 
-38. Arrangements with repeated elements
-$$ \frac{n!}{n_1!\, n_2!\, \cdots\, n_k!} $$
+Arrangements with repeated elements:
+$$\frac{n!}{n_1! \, n_2! \cdot \cdot \cdot n_k!}$$
 
-39. Binomial theorem
-$$ (x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}\, y^k $$
+Binomial Theorem:
+$$(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$$
 
-40. General (k+1)-th term in binomial expansion
-$$ T_{k+1} = \binom{n}{k} x^{n-k}\, y^k $$
+General (k+1)-th term in binomial expansion:
+$$T_{k+1} = \binom{n}{k} x^{n-k} y^k$$
 
-41. Sum of all binomial coefficients  (set x = y = 1)
-$$ \sum_{k=0}^{n} \binom{n}{k} = 2^n $$
+Sum of all binomial coefficients (set x = y = 1):
+$$\sum_{k=0}^n \binom{n}{k} = 2^n$$
 
-42. Complement rule
-$$ \Pr(A^c) = 1 - \Pr(A) $$
+Complement rule:
+$$\Pr(A^c) = 1 - \Pr(A)$$
 
-43. Probability of at least one success in n independent trials
-$$ \Pr(\text{at least one}) = 1 - (1 - p)^n $$
+Probability of at least one success in n independent trials:
+$$\Pr(\text{at least one}) = 1 - (1 - p)^n$$
 
-44. Inclusion-exclusion (two sets)
-$$ \left| A \cup B \right| = \left| A \right| + \left| B \right| - \left| A \cap B \right| $$
+Inclusion-exclusion (two sets):
+$$\left| A \cup B \right| = \left| A \right| + \left| B \right| - \left| A \cap B \right|$$
+
+Binomial Probability (exactly k successes):
+$$\Pr(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
