@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include <tice.h>
 #include <tex/tex.h>
 #include <tex_renderer.h>
@@ -21,10 +22,9 @@
 #define UI_COL_BORDER 253
 #define RENDERER_SLAB_SIZE ((size_t)20 * 1024)
 
-/* timer_1_Counter runs at 32768 Hz on the CE.
-   10 px/s => 1 pixel every 3276.8 ticks. */
-#define SCROLL_TIMER_FREQ   32768u
-#define SCROLL_TICKS_PER_PX (SCROLL_TIMER_FREQ / 10u)
+/* clock() is backed by Timer 1 at CLOCKS_PER_SEC Hz (32768 on the CE).
+   10 px/s => advance 1 pixel every CLOCKS_PER_SEC/10 ticks. */
+#define SCROLL_TICKS_PER_PX ((uint32_t)(CLOCKS_PER_SEC / 10))
 
 typedef struct
 {
@@ -306,11 +306,8 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 	int total_h = layout ? tex_get_total_height(layout) : 0;
 	int max_scroll = (total_h > viewport_h) ? (total_h - viewport_h) : 0;
 
-	/* Accumulator for sub-pixel scroll progress.
-	   Reset to 0 whenever no key is held so there is no
-	   leftover momentum when the user starts a new press. */
 	uint32_t tick_accum = 0;
-	uint32_t last_tick = timer_1_Counter;
+	clock_t last_tick = clock();
 
 	bool prev_clear = false;
 	bool prev_2nd = false;
@@ -332,9 +329,8 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 		if (clear_press || second_press)
 			break;
 
-		/* Measure elapsed time every frame. */
-		uint32_t now_tick = timer_1_Counter;
-		uint32_t elapsed  = now_tick - last_tick; /* unsigned: wraps safely */
+		clock_t now_tick = clock();
+		uint32_t elapsed = (uint32_t)(now_tick - last_tick);
 		last_tick = now_tick;
 
 		if (now_up || now_down)
@@ -357,8 +353,6 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 		}
 		else
 		{
-			/* No key held: drain the accumulator so the next press
-			   starts cleanly from zero. */
 			tick_accum = 0;
 		}
 
