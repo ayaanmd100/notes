@@ -21,6 +21,11 @@
 #define UI_COL_BORDER 253
 #define RENDERER_SLAB_SIZE ((size_t)20 * 1024)
 
+/* Timer 1 on the CE runs at 32768 Hz.
+   10 px/s means 1 pixel every 3276.8 ticks. */
+#define SCROLL_TIMER_FREQ  32768u
+#define SCROLL_TICKS_PER_PX (SCROLL_TIMER_FREQ / 10u)
+
 typedef struct
 {
 	uint16_t note_index;
@@ -301,6 +306,14 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 	int total_h = layout ? tex_get_total_height(layout) : 0;
 	int max_scroll = (total_h > viewport_h) ? (total_h - viewport_h) : 0;
 
+	/* Toggle-scroll state.
+	   scroll_dir: -1 = scrolling up, 0 = stopped, +1 = scrolling down.
+	   tick_accum: fractional ticks accumulated toward the next pixel step.
+	   last_tick:  value of timer_1_Counter at the previous frame. */
+	int scroll_dir = 0;
+	uint32_t tick_accum = 0;
+	uint32_t last_tick = timer_1_Counter;
+
 	bool prev_up = false;
 	bool prev_down = false;
 	bool prev_clear = false;
@@ -309,35 +322,69 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 	while (true)
 	{
 		kb_Scan();
-		bool now_up = (kb_Data[7] & kb_Up) != 0;
-		bool now_down = (kb_Data[7] & kb_Down) != 0;
+		bool now_up    = (kb_Data[7] & kb_Up)    != 0;
+		bool now_down  = (kb_Data[7] & kb_Down)  != 0;
 		bool now_clear = (kb_Data[6] & kb_Clear) != 0;
-		bool now_2nd = (kb_Data[1] & kb_2nd) != 0;
+		bool now_2nd   = (kb_Data[1] & kb_2nd)   != 0;
 
-		bool up_press = now_up && !prev_up;
-		bool down_press = now_down && !prev_down;
+		bool up_press    = now_up    && !prev_up;
+		bool down_press  = now_down  && !prev_down;
 		bool clear_press = now_clear && !prev_clear;
-		bool second_press = now_2nd && !prev_2nd;
+		bool second_press = now_2nd  && !prev_2nd;
 
-		prev_up = now_up;
-		prev_down = now_down;
+		prev_up    = now_up;
+		prev_down  = now_down;
 		prev_clear = now_clear;
-		prev_2nd = now_2nd;
+		prev_2nd   = now_2nd;
 
-		if (up_press && scroll_y > 0)
+		/* Toggle: pressing the active direction stops; pressing the opposite
+		   direction (or starting from rest) changes direction. */
+		if (up_press)
 		{
-			scroll_y -= 10;
-			if (scroll_y < 0)
-				scroll_y = 0;
+			scroll_dir = (scroll_dir == -1) ? 0 : -1;
+			tick_accum = 0;
 		}
-		if (down_press && scroll_y < max_scroll)
+		if (down_press)
 		{
-			scroll_y += 10;
-			if (scroll_y > max_scroll)
-				scroll_y = max_scroll;
+			scroll_dir = (scroll_dir == 1) ? 0 : 1;
+			tick_accum = 0;
 		}
 		if (clear_press || second_press)
 			break;
+
+		/* Advance scroll position based on elapsed timer ticks.
+		   timer_1_Counter wraps at 32-bit; unsigned subtraction handles this. */
+		uint32_t now_tick = timer_1_Counter;
+		uint32_t elapsed  = now_tick - last_tick;
+		last_tick = now_tick;
+
+		if (scroll_dir != 0)
+		{
+			tick_accum += elapsed;
+			while (tick_accum >= SCROLL_TICKS_PER_PX)
+			{
+				tick_accum -= SCROLL_TICKS_PER_PX;
+				scroll_y += scroll_dir;
+				if (scroll_y <= 0)
+				{
+					scroll_y  = 0;
+					scroll_dir = 0;
+					tick_accum = 0;
+					break;
+				}
+				if (scroll_y >= max_scroll)
+				{
+					scroll_y  = max_scroll;
+					scroll_dir = 0;
+					tick_accum = 0;
+					break;
+				}
+			}
+		}
+		else
+		{
+			tick_accum = 0;
+		}
 
 		gfx_FillScreen(COL_BG);
 		gfx_SetTextFGColor(COL_FG);
@@ -363,7 +410,7 @@ static void view_chunk_tex(const NtxNoteEntry* note, uint16_t chunk_index, TeX_R
 		}
 
 		gfx_SetTextXY(2, GFX_LCD_HEIGHT - 9);
-		gfx_PrintString("CLEAR/2ND:Back");
+		gfx_PrintString("UP/DOWN:Toggle scroll  CLEAR/2ND:Back");
 		gfx_SwapDraw();
 	}
 
