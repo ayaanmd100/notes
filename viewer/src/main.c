@@ -23,8 +23,8 @@
 #define RENDERER_SLAB_SIZE ((size_t)20 * 1024)
 
 /* clock() is backed by Timer 1 at CLOCKS_PER_SEC Hz (32768 on the CE).
-   10 px/s => advance 1 pixel every CLOCKS_PER_SEC/10 ticks. */
-#define SCROLL_TICKS_PER_PX ((uint32_t)(CLOCKS_PER_SEC / 10))
+   50 px/s => advance 1 pixel every CLOCKS_PER_SEC/50 ticks. */
+#define SCROLL_TICKS_PER_PX ((uint32_t)(CLOCKS_PER_SEC / 50))
 
 typedef struct
 {
