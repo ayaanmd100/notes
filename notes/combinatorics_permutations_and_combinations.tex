@@ -1,0 +1,26 @@
+\text{Factorial: } n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1, \quad 0! = 1
+
+\text{Permutations (order matters): } P(n,r) = \frac{n!}{(n-r)!}
+
+\text{Combinations (order does not matter): } C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}
+
+\binom{n}{r} = \binom{n}{n-r}
+
+\text{Permutations of all 26 letters taken 4 at a time: }
+P(26,4) = 26 \cdot 25 \cdot 24 \cdot 23 = 358800
+
+\text{Combinations example: } \binom{5}{3} = 10\text{, }\binom{5}{0}=1\text{, }\binom{5}{5}=1
+
+k = P(5,5) = 120, \quad w = C(5,3) = 10, \quad \frac{k}{w} = 12
+
+\text{C(n,3) problems: } \binom{n}{3} = \frac{n(n-1)(n-2)}{6}
+
+\text{Distributing 12 distinct balls equally into 3 containers (4 each):}
+\binom{12}{4} \cdot \binom{8}{4} \cdot \binom{4}{4} = 495 \cdot 70 \cdot 1 = 34650
+
+\text{Passcode: 7 characters \{X,Y,3,2,Q,7,B\}; starts with letter,}
+\text{ends with number, no repeats.}
+\text{Letters: X,Y,Q --- pick 1 for first: 3 choices}
+\text{Numbers: 3,2,7 --- pick 1 for last: 3 choices}
+\text{Middle 5 positions: arrange remaining 5: } 5! = 120
+\text{Total: } 3 \times 3 \times 120 = 1080

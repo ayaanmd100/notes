@@ -1,0 +1,48 @@
+i = \sqrt{-1}, \quad i^2 = -1, \quad i^3 = -i, \quad i^4 = 1
+
+\text{Powers of } i \text{ cycle with period 4.}
+\text{To find } i^n\text{: compute } r = n \bmod 4\text{, then:}
+
+\begin{array}{|c|c|}
+\hline
+r & i^n \\\hline
+0 & 1 \\\hline
+1 & i \\\hline
+2 & -1 \\\hline
+3 & -i \\\hline
+\end{array}
+
+\text{Example: } i^{2026} = i^{4 \cdot 506 + 2} = i^2 = -1
+
+\text{Sum of any 4 consecutive powers of } i \text{ equals zero:}
+i^k + i^{k+1} + i^{k+2} + i^{k+3} = 0
+
+\text{Example (2013 \#15): }
+i^2 + i^3 + i^4 + i^5 + i^6 + i^7 + i^8 = 0 + 0 + i^8 = i^0 = 1
+
+\text{Group from } i^2\text{: } (i^2+i^3+i^4+i^5)+(i^6+i^7+i^8)
+\text{but handle remainder carefully.}
+
+\text{Arithmetic: }
+(a + bi) + (c + di) = (a+c) + (b+d)i
+
+(a + bi)(c + di) = (ac - bd) + (ad + bc)i
+
+\frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{c^2 + d^2}
+= \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}\,i
+
+\text{Modulus: } |a + bi| = \sqrt{a^2 + b^2}
+
+\text{Conjugate: } \overline{a + bi} = a - bi
+
+\text{Conjugate Root Theorem:}
+\text{If } a + bi \text{ is a zero of a polynomial with real coefficients,}
+\text{then } a - bi \text{ is also a zero.}
+
+\text{Polynomial with zeros } 2,\, 3i,\, -3i\text{:}
+P(x) = (x - 2)(x - 3i)(x + 3i) = (x-2)(x^2 + 9)
+= x^3 - 2x^2 + 9x - 18
+\text{so } a = -2,\; b = 9,\; c = -18,\quad a+b+c = -11
+
+\text{DeMoivre's Theorem:}
+\left(r(\cos\theta + i\sin\theta)\right)^n = r^n\!\left(\cos(n\theta) + i\sin(n\theta)\right)

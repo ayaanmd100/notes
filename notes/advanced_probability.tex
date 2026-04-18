@@ -1,0 +1,35 @@
+\text{Binomial probability:}
+\Pr(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+
+\text{Expected value: } E(X) = np
+
+\text{Coin toss (2023 \#16): exactly 5 heads in 10 tosses, } p = \frac{1}{2}
+\Pr(X=5) = \binom{10}{5}\!\left(\frac{1}{2}\right)^{10} = \frac{252}{1024} = \frac{63}{256}
+
+\text{True/false quiz (State 2024 \#15): 10 questions, score exactly 7, } p = \frac{1}{2}
+\Pr(X=7) = \binom{10}{7}\!\left(\frac{1}{2}\right)^{10} = \frac{120}{1024} = \frac{15}{128}
+
+\text{Conditional probability: } \Pr(A | B) = \frac{\Pr(A \cap B)}{\Pr(B)}
+
+\text{Independent events: } \Pr(A \cap B) = \Pr(A) \cdot \Pr(B)
+
+\text{Mutually exclusive: } \Pr(A \cap B) = 0\text{, so } \Pr(A \cup B) = \Pr(A) + \Pr(B)
+
+\text{Geometric distribution (first success on trial } k\text{):}
+\Pr(X = k) = (1-p)^{k-1} p
+
+\text{Sum of geometric series in probability:}
+\Pr(\text{win}) = p + (1-p)^2 p + (1-p)^4 p + \cdots = \frac{p}{1-(1-p)^2}
+
+\text{Subsets of a set with } n \text{ elements: } 2^n \text{ (including empty set)}
+S = \{A,L,G,T,W,O\}\text{, } |S| = 6 \Rightarrow 2^6 = 64 \text{ subsets}
+
+\text{Letter probability (2026 \#17): } (2,k) \text{ chosen from }
+\{(2,3),(2,5),(2,7),(2,11),(2,13),(2,17)\}
+\text{Test } 4 + k^2 \text{ prime:}
+k=3\text{: }13\checkmark,\; k=5\text{: }29\checkmark,\; k=7\text{: }53\checkmark
+k=11\text{: }125=5^3 \times,\; k=13\text{: }173\checkmark,\; k=17\text{: }293\checkmark
+\Pr = \frac{5}{6}
+
+\text{Inclusion-exclusion:}
+\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)

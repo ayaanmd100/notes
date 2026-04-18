@@ -1,0 +1,53 @@
+\text{Definition: } \log_b(x) = n \iff b^n = x
+
+\text{Common log: } \log(x) = \log_{10}(x)
+\text{Natural log: } \ln(x) = \log_e(x)
+
+\text{Product rule: } \log_b(xy) = \log_b x + \log_b y
+
+\text{Quotient rule: } \log_b\!\left(\frac{x}{y}\right) = \log_b x - \log_b y
+
+\text{Power rule: } \log_b(x^n) = n \log_b x
+
+\text{Change of base: } \log_b a = \frac{\log a}{\log b} = \frac{\ln a}{\ln b}
+
+\log_b(1) = 0, \quad \log_b(b) = 1, \quad b^{\log_b(x)} = x
+
+\log(1) = 0, \quad \log(10) = 1, \quad \ln(e) = 1
+
+\ln(\exp(x)) = x, \quad \exp(\ln(x)) = x
+
+\text{Key values (memorize):}
+\log 2 \approx 0.30103, \quad \log 3 \approx 0.47712, \quad \log 7 \approx 0.84510
+
+\log 5 = \log\!\left(\frac{10}{2}\right) = 1 - \log 2 \approx 0.69897
+
+\log 4 = 2\log 2, \quad \log 6 = \log 2 + \log 3, \quad \log 8 = 3\log 2
+
+\log 9 = 2\log 3, \quad \log 12 = 2\log 2 + \log 3
+
+\text{Expressing in terms of given logs:}
+\text{If } \log_x 7 = p,\; \log_x 3 = q,\; \log_x 5 = r\text{, then:}
+\log_x 4.2 = \log_x\!\left(\frac{42}{10}\right)
+= \log_x(2 \cdot 3 \cdot 7) - \log_x(2 \cdot 5)
+= \log_x 3 + \log_x 7 - \log_x 5
+= q + p - r
+
+\text{Logarithm equations --- isolate, then exponentiate:}
+2\log k = 9 \Rightarrow \log k = \frac{9}{2} \Rightarrow k = 10^{4.5}
+
+\log k = 20 \Rightarrow k = 10^{20}
+\text{Remainder of } k \div 6\text{: use } 10^{20} \bmod 6
+10 \equiv 4 \pmod{6},\; 10^2 \equiv 4 \pmod{6},\; \text{so } 10^{20} \equiv 4 \pmod{6}
+
+\text{Exponential equations --- take log of both sides:}
+4^{6k+2} = 16^k \Rightarrow 2^{2(6k+2)} = 2^{4k} \Rightarrow 12k+4 = 4k \Rightarrow k = -\frac{1}{2}
+
+\text{Natural log to solve: } 10 = (20)(2^{2x})
+\Rightarrow 2^{2x} = \frac{1}{2} \Rightarrow 2x = -1 \Rightarrow x = -\frac{1}{2}
+
+\text{Equal bases: set exponents equal.}
+\text{Otherwise: take log of both sides and apply the power rule.}
+
+\text{Chain rule of logs:}
+\log_a(b) \cdot \log_b(c) = \log_a(c)

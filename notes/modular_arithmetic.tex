@@ -1,0 +1,19 @@
+a \equiv b \pmod{m} \iff m \mid (a - b)
+
+(a + b) \bmod m = ((a \bmod m) + (b \bmod m)) \bmod m
+
+(a \cdot b) \bmod m = ((a \bmod m) \cdot (b \bmod m)) \bmod m
+
+10 \equiv 4 \pmod{6}, \quad 10^2 \equiv 4 \pmod{6}, \quad 10^n \equiv 4 \pmod{6} \quad (n \ge 1)
+
+\text{Units digit of } (3^{33}+5^{55}+7^{77}+9^{99})\text{:}
+\text{Cycle of 3: } 3,9,7,1 \text{ (period 4) } \Rightarrow 3^{33}=3^{4\cdot8+1} \to 3
+\text{Cycle of 5: always 5}
+\text{Cycle of 7: } 7,9,3,1 \text{ (period 4) } \Rightarrow 7^{77}=7^{4\cdot19+1} \to 7
+\text{Cycle of 9: } 9,1 \text{ (period 2) } \Rightarrow 9^{99} \to 9
+\text{Units digit: } 3+5+7+9=24 \Rightarrow \text{units digit} = 4
+
+\text{Remainder of } mn+m+n \div 8 \text{ (2022 \#14):}
+n \equiv 1 \pmod{16} \Rightarrow n \equiv 1 \pmod{8}
+m \equiv 4 \pmod{24} \Rightarrow m \equiv 4 \pmod{8}
+mn + m + n \equiv 4 + 4 + 1 = 9 \equiv 1 \pmod{8}

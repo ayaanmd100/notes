@@ -1,0 +1,28 @@
+\text{Revenue function: } R(x) = \text{price} \times \text{quantity}
+
+\text{If price increases by } \Delta p\text{, quantity decreases by } m \Delta p\text{:}
+Q = Q_0 - m(p - p_0)
+R = p \cdot Q = -mp^2 + (Q_0 + mp_0)p
+
+\text{Maximize: vertex at } p^* = \frac{Q_0 + mp_0}{2m}
+
+\text{Example (2024 \#10): 360 dinners at \$50; every \$5 increase} \to \text{20 fewer dinners}
+p = 50 + 5t, \quad Q = 360 - 20t
+R = (50+5t)(360-20t) = -100t^2 + 800t + 18000
+\text{Vertex: } t = \frac{800}{200} = 4 \Rightarrow p = \$70
+R(4) = 70 \times 280 = 19600
+
+\text{Limousine example (2023 \#15): \$10/ride, 300 riders/day}
+\text{Every \$1 increase} \to \text{15 fewer riders}
+R = (10+x)(300-15x) = -15x^2 + 150x + 3000
+\text{Vertex: } x = \frac{150}{30} = 5 \Rightarrow p = \$15
+
+\text{AM-GM for maximizing product given sum:}
+xy \le \left(\frac{x+y}{2}\right)^2 \text{ with equality when } x = y
+
+\text{When } x + y = c\text{, } xy \text{ is maximized when } x = y = \frac{c}{2}\text{:}
+(xy)_{\max} = \frac{c^2}{4}
+
+\text{Example (2018 \#9): } 4x + 5y = 20\text{, maximize } xy
+\text{Max at } 4x = 5y\text{ and }4x+5y=20 \Rightarrow x=2.5,\; y=2
+xy_{\max} = 5

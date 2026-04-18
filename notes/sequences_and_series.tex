@@ -1,0 +1,69 @@
+\text{--- Arithmetic Sequences ---}
+
+a_n = a_1 + (n-1)d
+
+d = \frac{a_n - a_1}{n - 1}
+
+S_n = \frac{n}{2}(a_1 + a_n) = \frac{n}{2}\left(2a_1 + (n-1)d\right)
+
+\text{Number of terms from } a_1 \text{ to } a_n\text{: } n = \frac{a_n - a_1}{d} + 1
+
+\text{Finding } d \text{ from two terms:}
+a_7 = 4,\; a_{77} = 214 \Rightarrow 70d = 210 \Rightarrow d = 3,\; a_1 = 4 - 18 = -14
+
+\text{Arithmetic means: } k \text{ arithmetic means between } a \text{ and } b\text{:}
+d = \frac{b - a}{k + 1}
+
+\text{Sum of consecutive odd integers from } a \text{ to } b\text{:}
+n = \frac{b - a}{2} + 1, \quad S = \frac{n}{2}(a + b)
+
+\text{Sum of first } n \text{ odd integers} = n^2
+
+\text{--- Geometric Sequences ---}
+
+a_n = a_1 \cdot r^{n-1}
+
+r = \frac{a_2}{a_1}
+
+S_n = \frac{a_1(1 - r^n)}{1 - r}, \quad r \ne 1
+
+S_\infty = \frac{a_1}{1 - r}, \quad |r| < 1
+
+\text{Example: } a_1 = \frac{2}{3},\; a_2 = \frac{1}{3}
+\Rightarrow r = \frac{1}{2}
+\Rightarrow a_4 = \frac{2}{3} \cdot \left(\frac{1}{2}\right)^3 = \frac{1}{12}
+\Rightarrow a_5 = \frac{1}{24}
+\Rightarrow a_4 + a_5 = \frac{1}{12} + \frac{1}{24} = \frac{3}{24} = \frac{1}{8}
+
+\text{Infinite series condition: } a_1 = \frac{4}{3} \cdot S_\infty
+\Rightarrow 1 - r = \frac{4}{3}
+\Rightarrow r = -\frac{1}{3}
+
+\text{Geometric mean of } a \text{ and } b\text{: } G = \sqrt{ab}
+\text{Arithmetic mean: } A = \frac{a+b}{2}
+
+\text{--- Recursive Sequences ---}
+
+\text{Pell numbers: } P_0 = 0,\; P_1 = 1,\; P_n = 2P_{n-1} + P_{n-2}
+
+\begin{array}{c|ccccccccc}
+n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+P_n & 0 & 1 & 2 & 5 & 12 & 29 & 70 & 169 & 408
+\end{array}
+\text{Primes: } 2, 5, 29 \Rightarrow \text{sum} = 36
+
+\text{Collatz-style: } a_1 = 10\text{; if even: } a_n = \frac{a_{n-1}}{2}\text{; if odd: } a_n = 3a_{n-1}+1
+10 \to 5 \to 16 \to 8 \to 4 \to 2 \to 1 \to 4 \to 2 \to 1
+
+\text{Sum of even integers } 2 + 4 + \cdots + 2n\text{: } S = n(n + 1)
+
+\text{Sum of even integers } 2 + 4 + 6 + \cdots + 450\text{:}
+n = 225, \quad S = \frac{225}{2}(2 + 450) = \frac{225 \cdot 452}{2} = 50850
+
+\text{Telescoping differences of squares:}
+100^2 - 99^2 + 98^2 - 97^2 + \cdots + 2^2 - 1^2
+= (100+99) + (98+97) + \cdots + (2+1)
+= \frac{100 \cdot 101}{2} = 5050
+
+\text{Sum of first } n \text{ integers:}
+\sum_{i=1}^n i = \frac{n(n+1)}{2}

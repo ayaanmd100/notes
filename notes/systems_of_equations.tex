@@ -1,0 +1,20 @@
+\text{Substitution: solve one equation for one variable, substitute.}
+\text{Elimination: add/subtract equations to eliminate a variable.}
+\text{Matrix method: } AX = B \Rightarrow X = A^{-1}B
+
+\text{Nonlinear system (2014 \#9): }
+x + y = y + 5 \Rightarrow x = 5
+x + y = 20 \Rightarrow y = 15 \Rightarrow (5,15)
+
+\text{Area of polygonal region from inequality system:}
+\text{1. Find all boundary lines.}
+\text{2. Solve pairs to get vertices.}
+\text{3. Apply Shoelace Formula:}
+A = \frac{1}{2}\left|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1} y_i)\right| \quad \text{(indices mod } n\text{)}
+
+\text{Example (2018 \#20): } x+y \le 5,\; 2x-y \ge -4,\; x \ge 0,\; y \ge 0
+\text{Find vertices, apply Shoelace.}
+
+\text{Diophantine integer solutions (2026 \#11): } 5x + 16y = 38
+\text{Need } 38 - 16y \equiv 0 \pmod{5} \Rightarrow 3 - y \equiv 0 \pmod{5} \Rightarrow y \equiv 3 \pmod{5}
+y = 3\text{: } x = 2;\quad y = -2\text{: } x = 14;\quad y = 8\text{: } x = -10;\quad \ldots
