@@ -57,7 +57,7 @@ jobs:
           fi
           find build/ce -name '*.8xp' -exec cp {} bundle_inputs/ \;
 
-      - name: Build single-file group bundle
+      - name: Build group bundle(s)
         run: |
           shopt -s nullglob
           files=(bundle_inputs/*.8xv bundle_inputs/*.8xp)
@@ -65,20 +65,32 @@ jobs:
             echo "::error::No .8xp/.8xv files found to bundle"
             exit 1
           fi
-          cmd=(convbin --oformat 8xg-auto-extract --output artifact/NOTES_BUNDLE.8xg)
-          for f in "${files[@]}"; do
-            cmd+=(--iformat 8x --input "$f")
+          # The 8xg format data section is limited to ~64 KB total.
+          # Split files into batches of 10 so each bundle stays well under the cap.
+          batch_size=10
+          group=1
+          total=${#files[@]}
+          i=0
+          while [ $i -lt $total ]; do
+            batch=("${files[@]:$i:$batch_size}")
+            cmd=(convbin --oformat 8xg-auto-extract --output "artifact/NOTES_BUNDLE_${group}.8xg")
+            for f in "${batch[@]}"; do
+              cmd+=(--iformat 8x --input "$f")
+            done
+            "${cmd[@]}"
+            echo "Bundle ${group}: ${#batch[@]} files"
+            group=$((group + 1))
+            i=$((i + batch_size))
           done
-          "${cmd[@]}"
 
       - name: Upload artifact bundle
         uses: actions/upload-artifact@v4
         with:
           name: notes-template-artifacts
-          path: artifact/NOTES_BUNDLE.8xg
+          path: artifact/NOTES_BUNDLE_*.8xg
 
       - name: Publish to release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: artifact/NOTES_BUNDLE.8xg
+          files: artifact/NOTES_BUNDLE_*.8xg
