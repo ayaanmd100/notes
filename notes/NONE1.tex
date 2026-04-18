@@ -1,1 +1,1209 @@
+% ==============================================================
+%  DOMAIN 1: COMPLEX NUMBERS
+% ==============================================================
 
+i = \sqrt{-1}, \quad i^2 = -1, \quad i^3 = -i, \quad i^4 = 1
+
+\text{Powers of } i \text{ cycle with period 4.}
+\text{To find } i^n\text{: compute } r = n \bmod 4\text{, then:}
+
+\begin{array}{|c|c|}
+\hline
+r & i^n \\\hline
+0 & 1 \\\hline
+1 & i \\\hline
+2 & -1 \\\hline
+3 & -i \\\hline
+\end{array}
+
+\text{Example: } i^{2026} = i^{4 \cdot 506 + 2} = i^2 = -1
+
+\text{Sum of any 4 consecutive powers of } i \text{ equals zero:}
+i^k + i^{k+1} + i^{k+2} + i^{k+3} = 0
+
+\text{Example (2013 \#15): }
+i^2 + i^3 + i^4 + i^5 + i^6 + i^7 + i^8
+= 0 + 0 + i^8 = i^0 = 1
+
+\text{Group from } i^2\text{: } (i^2+i^3+i^4+i^5)+(i^6+i^7+i^8)
+\text{ but handle remainder carefully}
+
+\text{Arithmetic: }
+(a + bi) + (c + di) = (a+c) + (b+d)i
+
+(a + bi)(c + di) = (ac - bd) + (ad + bc)i
+
+\frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{c^2 + d^2}
+= \frac{ac + bd}{c^2 + d^2} + \frac{bc - ad}{c^2 + d^2}\,i
+
+\text{Modulus: } |a + bi| = \sqrt{a^2 + b^2}
+
+\text{Conjugate: } \overline{a + bi} = a - bi
+
+\text{Conjugate Root Theorem:}
+\text{If } a + bi \text{ is a zero of a polynomial with real coefficients,}
+\text{then } a - bi \text{ is also a zero.}
+
+\text{Polynomial with zeros } 2,\, 3i,\, -3i\text{:}
+P(x) = (x - 2)(x - 3i)(x + 3i) = (x-2)(x^2 + 9)
+= x^3 - 2x^2 + 9x - 18
+
+\text{so } a = -2,\; b = 9,\; c = -18,\quad a+b+c = -11
+
+\text{DeMoivre's Theorem:}
+\left(r(\cos\theta + i\sin\theta)\right)^n = r^n\!\left(\cos(n\theta) + i\sin(n\theta)\right)
+
+% ==============================================================
+%  DOMAIN 2: LOGARITHMS
+% ==============================================================
+
+\text{Definition: } \log_b(x) = n \iff b^n = x
+
+\text{Common log: } \log(x) = \log_{10}(x)
+\text{Natural log: } \ln(x) = \log_e(x)
+
+\text{Product rule: } \log_b(xy) = \log_b x + \log_b y
+
+\text{Quotient rule: } \log_b\!\left(\frac{x}{y}\right) = \log_b x - \log_b y
+
+\text{Power rule: } \log_b(x^n) = n \log_b x
+
+\text{Change of base: } \log_b a = \frac{\log a}{\log b} = \frac{\ln a}{\ln b}
+
+\log(1) = 0, \quad \log(10) = 1, \quad \ln(e) = 1
+
+\text{Key values (memorize):}
+\log 2 \approx 0.30103, \quad \log 3 \approx 0.47712, \quad \log 7 \approx 0.84510
+
+\log 5 = \log\!\left(\frac{10}{2}\right) = 1 - \log 2 \approx 0.69897
+
+\log 4 = 2\log 2, \quad \log 6 = \log 2 + \log 3, \quad \log 8 = 3\log 2
+
+\log 9 = 2\log 3, \quad \log 12 = 2\log 2 + \log 3
+
+\text{Expressing in terms of given logs:}
+\text{If } \log_x 7 = p,\; \log_x 3 = q,\; \log_x 5 = r\text{, then:}
+\log_x 4.2 = \log_x\!\left(\frac{42}{10}\right)
+= \log_x(2 \cdot 3 \cdot 7) - \log_x(2 \cdot 5)
+= \log_x 3 + \log_x 7 - \log_x 5
+= q + p - r
+
+\text{Logarithm equations — isolate, then exponentiate:}
+2\log k = 9 \Rightarrow \log k = \frac{9}{2} \Rightarrow k = 10^{4.5}
+
+\log k = 20 \Rightarrow k = 10^{20}
+\text{Remainder of } k \div 6\text{: use } 10^{20} \bmod 6
+10 \equiv 4 \pmod{6},\; 10^2 \equiv 4 \pmod{6},\; \text{so } 10^{20} \equiv 4 \pmod{6}
+
+\text{Exponential equations — take log of both sides:}
+4^{6k+2} = 16^k \Rightarrow 2^{2(6k+2)} = 2^{4k} \Rightarrow 12k+4 = 4k \Rightarrow k = -\frac{1}{2}
+
+\text{Natural log to solve: } 10 = (20)(2^{2x})
+\Rightarrow 2^{2x} = \frac{1}{2} \Rightarrow 2x = -1 \Rightarrow x = -\frac{1}{2}
+
+\text{Logarithm system (2018 \#18): }
+\log_2 3 + \log_5 5 + \log_3 2 = \log_2 3 + 1 + \log_3 2 \ne 0 \text{ — set up carefully}
+
+% ==============================================================
+%  DOMAIN 3: SEQUENCES AND SERIES
+% ==============================================================
+
+\text{--- Arithmetic Sequences ---}
+
+a_n = a_1 + (n-1)d
+
+d = \frac{a_n - a_1}{n - 1}
+
+S_n = \frac{n}{2}(a_1 + a_n) = \frac{n}{2}\left(2a_1 + (n-1)d\right)
+
+\text{Number of terms from } a_1 \text{ to } a_n\text{: } n = \frac{a_n - a_1}{d} + 1
+
+\text{Finding } d \text{ from two terms:}
+a_7 = 4,\; a_{77} = 214 \Rightarrow 70d = 210 \Rightarrow d = 3, \; a_1 = 4 - 18 = -14
+
+\text{Arithmetic means: } k \text{ arithmetic means between } a \text{ and } b:
+d = \frac{b - a}{k + 1}
+
+\text{Sum of consecutive odd integers from } a \text{ to } b\text{:}
+n = \frac{b - a}{2} + 1, \quad S = \frac{n}{2}(a + b)
+
+\text{Sum of first } n \text{ odd integers } = n^2
+
+\text{--- Geometric Sequences ---}
+
+a_n = a_1 \cdot r^{n-1}
+
+r = \frac{a_2}{a_1}
+
+S_n = \frac{a_1(1 - r^n)}{1 - r}, \quad r \ne 1
+
+S_\infty = \frac{a_1}{1 - r}, \quad |r| < 1
+
+\text{Example: } a_1 = \frac{2}{3},\; a_2 = \frac{1}{3}
+\Rightarrow r = \frac{1}{2}
+\Rightarrow a_4 = \frac{2}{3} \cdot \left(\frac{1}{2}\right)^3 = \frac{1}{12}
+\Rightarrow a_5 = \frac{1}{24}
+\Rightarrow a_4 + a_5 = \frac{1}{12} + \frac{1}{24} = \frac{3}{24} = \frac{1}{8}
+
+\text{Infinite series condition: } a_1 = \frac{4}{3} \cdot S_\infty
+\Rightarrow a_1 = \frac{4}{3} \cdot \frac{a_1}{1-r}
+\Rightarrow 1 - r = \frac{4}{3}
+\Rightarrow r = -\frac{1}{3}
+
+\text{Geometric mean of } a \text{ and } b\text{: } G = \sqrt{ab}
+\text{Arithmetic mean: } A = \frac{a+b}{2}
+
+\text{--- Recursive Sequences ---}
+
+\text{Pell numbers: } P_0 = 0,\; P_1 = 1,\; P_n = 2P_{n-1} + P_{n-2}
+
+\begin{array}{c|ccccccccc}
+n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+P_n & 0 & 1 & 2 & 5 & 12 & 29 & 70 & 169 & 408
+\end{array}
+\text{Primes: } 2, 5, 29 \Rightarrow \text{sum} = 36
+
+\text{Collatz-style: } a_1 = 10\text{, if } a_{n-1} \text{ even: } a_n = \frac{a_{n-1}}{2}\text{; if odd: } a_n = 3a_{n-1}+1
+\text{Compute term by term: }10\to5\to16\to8\to4\to2\to1\to4\to2\to1
+
+\text{Sum of even integers } 2 + 4 + 6 + \cdots + 450\text{:}
+n = 225, \quad S = \frac{225}{2}(2 + 450) = \frac{225 \cdot 452}{2} = 50850
+
+\text{Telescoping differences of squares:}
+100^2 - 99^2 + 98^2 - 97^2 + \cdots + 2^2 - 1^2
+= (100+99) + (98+97) + \cdots + (2+1)
+= 199 + 195 + \cdots + 3 \quad \text{(50 terms, each a sum of two consecutive)}
+= \sum_{k=1}^{50}(2k-1)(2) \quad \text{or } = \frac{100 \cdot 101}{2} = 5050
+
+% ==============================================================
+%  DOMAIN 4: FUNCTIONS — COMPOSITE AND INVERSE
+% ==============================================================
+
+\text{Composite: } (f \circ g)(x) = f(g(x))
+\text{Evaluate inner function first, substitute into outer.}
+
+\text{Example: } f(x) = 20x+4,\; g(x) = 24x-10
+g\!\left(-\frac{1}{4}\right) = 24\!\left(-\frac{1}{4}\right) - 10 = -6 - 10 = -16
+f(-16) = 20(-16) + 4 = -316
+
+\text{Inverse: swap } x \text{ and } y\text{, solve for } y
+
+f(x) = \frac{3x+2}{2x-3} \Rightarrow y = \frac{3x+2}{2x-3}
+\Rightarrow x(2y-3) = 3y+2
+\Rightarrow 2xy - 3x = 3y + 2
+\Rightarrow y(2x-3) = 3x+2
+\Rightarrow f^{-1}(x) = \frac{3x+2}{2x-3}
+
+\text{Note: this function is its own inverse (involution)}
+
+f^{-1}(v) = w \iff f(w) = v \quad \text{(use this shortcut on competition)}
+
+\text{Operations on functions:}
+(f + g)(x) = f(x) + g(x)
+(fg)(x) = f(x) \cdot g(x)
+\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)},\quad g(x) \ne 0
+
+\text{Domain: all } x \text{ for which } f(x) \text{ is defined}
+\text{Range: all output values of } f(x)
+
+\text{For } f = \{(3,5),(5,7),(2,3)\}\text{: domain} = \{2,3,5\}\text{, sum} = 10
+
+% ==============================================================
+%  DOMAIN 5: FUNCTION TRANSFORMATIONS
+% ==============================================================
+
+\text{General form: } g(x) = a \cdot f\!\left(\frac{1}{b}(x - h)\right) + k
+
+\begin{array}{ll}
+|a| > 1 & \text{vertical stretch by factor } |a| \\
+0 < |a| < 1 & \text{vertical compression} \\
+a < 0 & \text{reflect over } x\text{-axis} \\
+b > 1 & \text{horizontal stretch by factor } b \\
+0 < b < 1 & \text{horizontal compression} \\
+h > 0 & \text{shift right by } h \\
+k > 0 & \text{shift up by } k \\
+\end{array}
+
+\text{Key point } (x_0,\, y_0) \text{ on } f \text{ maps to } (x_1,\, y_1) \text{ on } g\text{:}
+x_1 = b \cdot x_0 + h, \quad y_1 = a \cdot y_0 + k
+
+\text{Example (2026 \#8): } g(x) = -3f\!\left(\tfrac{1}{2}(x-6)\right) + 1
+
+f \text{ has maximum at } (-2,\, 5)\text{. Find max of } g\text{.}
+x_1 = 2(-2) + 6 = 2, \quad y_1 = -3(5) + 1 = -14
+
+\text{Since } a = -3 < 0\text{, the maximum of } f \text{ maps to a \textbf{minimum} of } g
+\text{So } g \text{ has a \textbf{minimum} at } (2, -14)
+
+f \text{ has minimum at } (4, -6)\text{:}
+x_1 = 2(4) + 6 = 14, \quad y_1 = -3(-6) + 1 = 19
+g \text{ has maximum at } (14,\, 19)\text{, so } w = 19
+
+\text{Domain shift: } f(x-h)+k \Rightarrow \text{domain shifts right by } h\text{, range shifts up by } k
+
+\text{If } f \text{ has domain } [-2,5]\text{, range } [-1,7]\text{:}
+f(x-2)+1 \Rightarrow \text{domain } [0,7]\text{, range } [0,8]
+a+b+c+d = 0+7+0+8 = 15
+
+% ==============================================================
+%  DOMAIN 6: COMPLETING THE SQUARE
+% ==============================================================
+
+\text{Basic step:}
+x^2 + bx = \left(x + \frac{b}{2}\right)^2 - \frac{b^2}{4}
+
+\text{General quadratic:}
+ax^2 + bx + c = a\left(x + \frac{b}{2a}\right)^2 + c - \frac{b^2}{4a}
+
+\text{Vertex form:}
+f(x) = a(x - h)^2 + k
+\quad h = -\frac{b}{2a}, \quad k = c - \frac{b^2}{4a}
+
+\text{Example: } 2x^2 - 8x + 3
+= 2(x^2 - 4x) + 3
+= 2\!\left[(x-2)^2 - 4\right] + 3
+= 2(x-2)^2 - 5
+\quad \Rightarrow \text{vertex } (2, -5)
+
+\text{Completing the square for circles/ellipses/hyperbolas:}
+x^2 + 2x + y^2 - 12y + 3 = 0
+(x^2 + 2x + 1) + (y^2 - 12y + 36) = -3 + 1 + 36
+(x+1)^2 + (y-6)^2 = 34
+\Rightarrow \text{center } (-1, 6)\text{, radius } \sqrt{34}
+
+\text{Ellipse example (2013 \#13): } x^2 + 2x + y^2 - 12y + 3 = 0 \text{ — wait, let me redo}
+x^2 + 2x + 3y^2 - 12y + 4 = 0 \text{ — adjust per actual problem}
+
+\text{General completing-the-square for conic:}
+Ax^2 + Bx + Cy^2 + Dy + E = 0
+A\!\left(x + \frac{B}{2A}\right)^2 + C\!\left(y + \frac{D}{2C}\right)^2 = \frac{B^2}{4A} + \frac{D^2}{4C} - E
+
+\text{Min/max using vertex form:}
+\text{If } a > 0\text{: minimum value} = k \text{ (vertex } y\text{-value)}
+\text{If } a < 0\text{: maximum value} = k
+
+\text{Example: } f(x) = -2x^2 + 5x + 3
+h = -\frac{5}{2(-2)} = \frac{5}{4}
+k = 3 - \frac{25}{4(-2)} = 3 + \frac{25}{8} = \frac{49}{8}
+
+\text{Finding } k \text{ such that min of } x^2 - 2kx - k = -6\text{:}
+\text{vertex } y = -k - k^2 = -6
+k^2 + k - 6 = 0
+(k+3)(k-2) = 0
+\Rightarrow k = -3 \text{ or } k = 2\text{, sum} = -1
+
+% ==============================================================
+%  DOMAIN 7: QUADRATICS AND DISCRIMINANT
+% ==============================================================
+
+\text{Quadratic formula: } x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+
+\text{Discriminant: } \Delta = b^2 - 4ac
+
+\begin{array}{ll}
+\Delta > 0 & \text{two distinct real roots} \\
+\Delta = 0 & \text{one repeated (double) root; parabola tangent to } x\text{-axis} \\
+\Delta < 0 & \text{two complex conjugate roots}
+\end{array}
+
+\text{Sum of roots: } r_1 + r_2 = -\frac{b}{a}
+
+\text{Product of roots: } r_1 \cdot r_2 = \frac{c}{a}
+
+\text{Difference of roots: } |r_1 - r_2| = \frac{\sqrt{\Delta}}{|a|}
+
+\text{Example (2018 \#17): } 2x^2 - kx + 306 = 0\text{, }k > 0\text{, difference of roots} = 1
+\frac{\sqrt{k^2 - 4 \cdot 2 \cdot 306}}{2} = 1
+\sqrt{k^2 - 2448} = 2
+k^2 = 2452, \quad k = \sqrt{2452} = 2\sqrt{613}
+
+\text{Wait — let me redo: difference formula for } ax^2+bx+c\text{:}
+|r_1 - r_2| = \frac{\sqrt{b^2 - 4ac}}{|a|}
+k^2 - 2448 = 4 \Rightarrow k^2 = 2452 \Rightarrow k = \sqrt{2452}
+
+\text{Tangent to } x\text{-axis} \Rightarrow \Delta = 0\text{:}
+y = x^2 + 16x + 2k \Rightarrow 256 - 8k = 0 \Rightarrow k = 32
+
+\text{One real solution } (f(x) = x)\text{:}
+27x^2 + 32x - 10 = x \Rightarrow 27x^2 + 31x - 10 = 0
+x = \frac{-31 \pm \sqrt{961 + 1080}}{54} = \frac{-31 \pm \sqrt{2041}}{54}
+
+\text{Square root of one root equals the other (2023 \#10): } x^2 - kx + 8 = 0
+\text{Let roots be } r \text{ and } r^2\text{: } r \cdot r^2 = 8 \Rightarrow r = 2
+k = r + r^2 = 2 + 4 = 6
+
+% ==============================================================
+%  DOMAIN 8: VIETA'S LAWS / THEORY OF EQUATIONS
+% ==============================================================
+
+\text{For } x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0 = 0 \text{ with roots } r_1, r_2, \ldots, r_n\text{:}
+
+\sum r_i = -a_{n-1}
+\quad\quad \text{(sum of roots} = -\text{coefficient of } x^{n-1}\text{)}
+
+\sum_{i < j} r_i r_j = a_{n-2}
+\quad\quad \text{(sum of products of pairs)}
+
+r_1 r_2 \cdots r_n = (-1)^n a_0
+\quad\quad \text{(product of all roots)}
+
+\text{For quadratic } ax^2 + bx + c = 0\text{:}
+r_1 + r_2 = -\frac{b}{a}, \quad r_1 r_2 = \frac{c}{a}
+
+\text{For cubic } ax^3 + bx^2 + cx + d = 0\text{:}
+r_1+r_2+r_3 = -\frac{b}{a}
+r_1 r_2 + r_1 r_3 + r_2 r_3 = \frac{c}{a}
+r_1 r_2 r_3 = -\frac{d}{a}
+
+\text{Sum of squares of roots:}
+(r_1+r_2+r_3)^2 = r_1^2+r_2^2+r_3^2 + 2(r_1r_2+r_1r_3+r_2r_3)
+\Rightarrow r_1^2+r_2^2+r_3^2 = (r_1+r_2+r_3)^2 - 2(r_1r_2+r_1r_3+r_2r_3)
+
+\text{Reciprocal roots: if } r \text{ is a root of } f(x)\text{, then } \frac{1}{r} \text{ is a root of } x^n f\!\left(\frac{1}{x}\right)}
+\Rightarrow \text{reverse the coefficient list}
+
+\text{Negative reciprocal roots: reverse coefficients, then negate odd-indexed ones}
+
+\text{Relation of coefficients to roots example:}
+\text{Cubic with roots } r_1, r_2, r_3\text{:}
+x^3 - (r_1+r_2+r_3)x^2 + (r_1r_2+r_1r_3+r_2r_3)x - r_1r_2r_3 = 0
+
+\text{Conjugate pairs: complex roots of real-coefficient polynomials come in conjugate pairs}
+
+\text{Common root of two polynomials } p(x) \text{ and } q(x)\text{:}
+\text{Subtract to reduce degree, then find the root}
+
+\text{Example (2024 \#8): } x^3+kx^2-3x+4=0 \text{ and } x^3+kx^2-5x+8=0
+\text{Subtract: } 2x - 4 = 0 \Rightarrow x = 2
+\text{Sub back: } 8 + 4k - 10 + 8 = 0 \Rightarrow k = -\frac{3}{2}
+
+\text{Remainder Theorem: } f(x) \div (x - c) \text{ has remainder } f(c)
+
+\text{Factor Theorem: } (x-c) \text{ is a factor} \iff f(c) = 0
+
+\text{Rational Root Theorem: possible rational roots} = \pm\frac{\text{factors of constant}}{\text{factors of leading coefficient}}
+
+% ==============================================================
+%  DOMAIN 9: POLYNOMIALS — OPERATIONS AND FACTORING
+% ==============================================================
+
+\text{FOIL and expansion:}
+(a+b)(c+d) = ac + ad + bc + bd
+
+(a+b)^2 = a^2 + 2ab + b^2
+
+(a-b)^2 = a^2 - 2ab + b^2
+
+(a+b)(a-b) = a^2 - b^2
+
+(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3
+
+(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3
+
+a^3 + b^3 = (a+b)(a^2 - ab + b^2)
+
+a^3 - b^3 = (a-b)(a^2 + ab + b^2)
+
+\text{Polynomial long division / synthetic division:}
+\text{If } f(x) = (x-c) \cdot Q(x) + R\text{, then } R = f(c)
+
+\text{Example (2013 \#3): }
+5x^3 + 3x^2 + x + k \div (x-2)\text{, remainder} = 2
+f(2) = 40 + 12 + 2 + k = 2 \Rightarrow k = -52
+
+\text{Example (2016 \#16): }
+x^3 + 8x^2 + kx - 2 \text{ divisible by } (x-1)
+f(1) = 1 + 8 + k - 2 = 0 \Rightarrow k = -7
+
+\text{Two factors given (2026 \#13): } kx^3 + wx^2 - 5x + 84\text{, factors } (x-7)\text{ and }(x-4)
+f(7) = 343k + 49w - 35 + 84 = 0 \Rightarrow 343k + 49w = -49
+f(4) = 64k + 16w - 20 + 84 = 0 \Rightarrow 64k + 16w = -64
+\text{Simplify: } 7k + w = -1\text{ and } 4k + w = -4
+\Rightarrow 3k = 3 \Rightarrow k = 1,\; w = -8
+
+% ==============================================================
+%  DOMAIN 10: MATRICES AND DETERMINANTS
+% ==============================================================
+
+\text{2x2 determinant:}
+\det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
+
+\text{2x2 inverse:}
+\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+
+\text{A matrix has no inverse (is singular) when } \det = 0
+
+\text{Matrix multiplication:}
+\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} e & f \\ g & h \end{pmatrix} = \begin{pmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{pmatrix}
+
+\text{Matrix equation } AX = B \Rightarrow X = A^{-1}B
+
+\text{3x3 determinant (cofactor expansion along row 1):}
+\det\begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}
+= a(ei - fh) - b(di - fg) + c(dh - eg)
+
+\text{If det} = 0 \text{: set up equation in unknowns and solve}
+
+\text{Identity matrix: } I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+
+\text{Example (2023 \#3): } \begin{pmatrix}5 & 4\\1 & 1\end{pmatrix}\begin{pmatrix}-1 & k\\-1 & 5\end{pmatrix} = \begin{pmatrix}1&0\\0&1\end{pmatrix}
+\text{Entry (1,2): } 5k + 20 = 0 \Rightarrow k = -4
+
+\text{Scalar multiplication: } c\begin{pmatrix}a&b\\c&d\end{pmatrix} = \begin{pmatrix}ca&cb\\cc&cd\end{pmatrix}
+
+\text{No inverse condition (State 2024): }
+\det\begin{pmatrix}24 & 16\\k & -8\end{pmatrix} = 0
+\Rightarrow -192 - 16k = 0 \Rightarrow k = -12
+
+% ==============================================================
+%  DOMAIN 11: COMBINATORICS — PERMUTATIONS AND COMBINATIONS
+% ==============================================================
+
+\text{Factorial: } n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1, \quad 0! = 1
+
+\text{Permutations (order matters): } P(n,r) = \frac{n!}{(n-r)!}
+
+\text{Combinations (order does not matter): } C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}
+
+\binom{n}{r} = \binom{n}{n-r}
+
+\text{Permutations of all 26 letters taken 4 at a time: }
+P(26,4) = 26 \cdot 25 \cdot 24 \cdot 23 = 358800
+
+\text{Combinations example: } \binom{5}{3} = 10\text{, }\binom{5}{0}=1\text{, }\binom{5}{5}=1
+
+k = P(5,5) = 120, \quad w = C(5,3) = 10, \quad \frac{k}{w} = 12
+
+\text{C(n,3) problems: } \binom{n}{3} = \frac{n(n-1)(n-2)}{6}
+
+\binom{k}{3} + \binom{w}{3} = 166
+
+\text{Distributing 12 distinct balls equally into 3 containers (4 each):}
+\binom{12}{4} \cdot \binom{8}{4} \cdot \binom{4}{4} = 495 \cdot 70 \cdot 1 = 34650
+
+\text{Passcode: 7 characters (X,Y,3,2,Q,7,B); starts with letter, ends with number, no repeats}
+\text{Letters: X,Y,Q — pick 1 for first position: 3 choices}
+\text{Numbers: 3,2,7 — pick 1 for last position: 3 choices}
+\text{Middle 5 positions: arrange remaining 5 from 5: } 5! = 120
+\text{Total: } 3 \times 3 \times 120 = 1080
+
+\text{Ordered arrangements of letters drawn from bag: use } P\text{ or } C \text{ based on context}
+
+% ==============================================================
+%  DOMAIN 12: ARRANGEMENTS WITH REPEATS
+% ==============================================================
+
+\text{Arrangements of } n \text{ objects where } r_1 \text{ are identical of type 1,}
+r_2 \text{ identical of type 2, etc.:}
+\frac{n!}{r_1!\, r_2!\, r_3!\, \cdots}
+
+\text{CHOICE: C-H-O-I-C-E; letters C repeats twice}
+\frac{6!}{2!} = \frac{720}{2} = 360
+
+\text{NATIONAL: N-A-T-I-O-N-A-L; N repeats twice, A repeats twice}
+\frac{8!}{2!\,2!} = \frac{40320}{4} = 10080
+
+\text{Three letters from NATIONAL that spell TAN:}
+\text{Count ways to draw T, A, N from \{N,A,T,I,O,N,A,L\}:}
+\text{T: 1 copy, A: 2 copies, N: 2 copies}
+\text{Ways to choose 1 T, 1 A, 1 N: } \binom{1}{1}\binom{2}{1}\binom{2}{1} = 1 \cdot 2 \cdot 2 = 4
+\text{Total ways to draw 3 from 8: } \binom{8}{3} = 56
+\Pr(\text{TAN}) = \frac{4}{56} = \frac{1}{14}
+
+\text{Circular arrangements: } (n-1)!
+
+\text{Three-digit numbers with no zeroes and at least one 5:}
+\text{Total with no zeroes: } 9^3 = 729
+\text{No zeroes AND no fives: } 8^3 = 512
+\text{At least one five (no zeroes): } 729 - 512 = 217
+
+\text{Number of integers in a range: } \lfloor b \rfloor - \lceil a \rceil + 1
+
+% ==============================================================
+%  DOMAIN 13: MEAN, MEDIAN, MODE
+% ==============================================================
+
+\text{Mean (arithmetic average): } \bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\sum x_i}{n}
+
+\text{Weighted mean: } \bar{x} = \frac{n_1\bar{x}_1 + n_2\bar{x}_2}{n_1 + n_2}
+
+\text{Example (2020 \#5): }
+\bar{x}_1 = 32\text{ over 50 numbers, } \bar{x}_2 = 53 \text{ over 70 numbers}
+\bar{x} = \frac{50(32) + 70(53)}{120} = \frac{1600 + 3710}{120} = \frac{5310}{120} = \frac{177}{4} = 44.25
+
+\text{Median: middle value when data is ordered}
+\text{For } n \text{ values: position} = \frac{n+1}{2}
+\text{If } n \text{ even: average of the two middle values}
+
+\text{Example scores: } 62,68,73,77,\mathbf{78},\mathbf{82},86,86,90,92 \text{ (n=10)}
+\text{Median} = \frac{78+82}{2} = 80
+
+\text{Mode: most frequently occurring value(s)}
+
+\text{Median adjustment (2026 \#19):}
+\text{Each score increased by } \frac{1}{10} \times 80 = 8
+\text{Fran's score (lowest: 62): } 62 + 8 = 70
+\text{Percentage increase: } \frac{8}{62} \times 100 = 12.903...
+
+\text{Geometric mean of } a \text{ and } b\text{: } G = \sqrt{ab}
+
+\text{Harmonic mean of } a \text{ and } b\text{: } H = \frac{2ab}{a+b}
+
+\text{Example (2022 \#16): harmonic mean of 10 and 24:}
+H = \frac{2(10)(24)}{10+24} = \frac{480}{34} = \frac{240}{17}
+
+\text{For rates (average speed): use harmonic mean}
+\text{Average speed} = \frac{2d_1 d_2 / r_1\, +\, d_2 / r_2}{\text{total time}} \text{ — use } \frac{\text{total distance}}{\text{total time}}
+
+\text{Example (2024 \#13): } \frac{1}{3}d \text{ at 70 km/h, } \frac{2}{3}d \text{ at 35 km/h}
+t = \frac{d/3}{70} + \frac{2d/3}{35} = \frac{d}{210} + \frac{2d}{105} = \frac{d + 4d}{210} = \frac{5d}{210}
+\bar{v} = \frac{d}{5d/210} = \frac{210}{5} = 42 \text{ km/h}
+
+\text{Mean of a set } S = \left\{\frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}\right\}\text{:}
+\bar{x} = \frac{1}{4}\!\left(\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}\right) = \frac{1}{4} \cdot \frac{30+20+15+12}{60} = \frac{77}{240}
+\text{Median (middle two): } \frac{1/4 + 1/3}{2} = \frac{7}{24} \cdot \frac{1}{2} = \frac{7}{48}
+
+% ==============================================================
+%  DOMAIN 14: PROBABILITY — BASIC
+% ==============================================================
+
+\Pr(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}
+
+0 \le \Pr(A) \le 1
+
+\Pr(\text{not } A) = 1 - \Pr(A)
+
+\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)
+
+\Pr(A \cap B) = \Pr(A) \cdot \Pr(B) \quad \text{(if independent)}
+
+\text{Venn diagram (2020 \#2): }
+|A \cup B| = |A| + |B| - |A \cap B|
+\text{52 seniors: 10 A in sci, 24 A in math, 5 both}
+|A \cup B| = 10 + 24 - 5 = 29
+\text{Neither: } 52 - 29 = 23
+
+\text{At least one success in } n \text{ trials:}
+\Pr(\text{at least 1}) = 1 - \Pr(\text{none}) = 1 - (1-p)^n
+
+\text{Example (2013 \#9): }
+\Pr(\text{make at least 1 free throw}) < 0.99\text{, } p = 0.73
+1 - (0.27)^n < 0.99 \Rightarrow (0.27)^n > 0.01
+n\log(0.27) > \log(0.01) \Rightarrow n < \frac{-2}{\log(0.27)} \approx \frac{2}{0.5686} \approx 3.52
+\Rightarrow \text{maximum whole number: } n = 3
+
+\text{Geometric probability (series): }
+\Pr(\text{win on 1st turn}) + \Pr(\text{win on 3rd turn}) + \cdots
+= p + (1-p)(1-q)p + \cdots = \frac{p}{1 - (1-p)(1-q)}
+
+\text{Molly } (p = \frac{3}{5})\text{, Connie }(q = \frac{3}{4})\text{, Molly goes first:}
+\Pr(M) = \frac{3/5}{1 - (2/5)(1/4)} = \frac{3/5}{1 - 1/10} = \frac{3/5}{9/10} = \frac{2}{3}
+
+\text{Dart problem (2022 \#10): 28 hits out of 112; need} > 35\text{\% hitting}
+\frac{28 + x}{112 + x} > 0.35
+28 + x > 39.2 + 0.35x
+0.65x > 11.2 \Rightarrow x > 17.2 \Rightarrow x_{\min} = 18
+
+\text{Probability of prime (2024 \#20): }x \in \{6,7,8,\ldots,14\}\text{, P}(x^2-29 \text{ prime})
+\begin{array}{c|c|c}
+x & x^2 - 29 & \text{prime?} \\ \hline
+6 & 7 & \text{yes} \\
+7 & 20 & \text{no} \\
+8 & 35 & \text{no} \\
+9 & 52 & \text{no} \\
+10 & 71 & \text{yes} \\
+11 & 92 & \text{no} \\
+12 & 115 & \text{no} \\
+13 & 140 & \text{no} \\
+14 & 167 & \text{yes}
+\end{array}
+\Pr = \frac{3}{9} = \frac{1}{3}
+
+% ==============================================================
+%  DOMAIN 15: ADVANCED PROBABILITY
+% ==============================================================
+
+\text{Binomial probability:}
+\Pr(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+
+\text{Expected value: } E(X) = np
+
+\text{Coin toss (2023 \#16): exactly 5 heads in 10 tosses, } p = \frac{1}{2}
+\Pr(X=5) = \binom{10}{5}\!\left(\frac{1}{2}\right)^{10} = \frac{252}{1024} = \frac{63}{256}
+
+\text{True/false quiz (State 2024 \#15): 10 questions, score exactly 7, } p = \frac{1}{2}
+\Pr(X=7) = \binom{10}{7}\!\left(\frac{1}{2}\right)^{10} = \frac{120}{1024} = \frac{15}{128}
+
+\text{Conditional probability: } \Pr(A | B) = \frac{\Pr(A \cap B)}{\Pr(B)}
+
+\text{Independent events: } \Pr(A \cap B) = \Pr(A) \cdot \Pr(B)
+
+\text{Mutually exclusive: } \Pr(A \cap B) = 0\text{, so } \Pr(A \cup B) = \Pr(A) + \Pr(B)
+
+\text{Geometric distribution (first success on trial } k\text{):}
+\Pr(X = k) = (1-p)^{k-1} p
+
+\text{Sum of geometric series in probability:}
+\Pr(\text{win}) = p + (1-p)^2 p + (1-p)^4 p + \cdots = \frac{p}{1-(1-p)^2}
+
+\text{Subsets of a set with } n \text{ elements: } 2^n \text{ (including empty set)}
+S = \{A,L,G,T,W,O\}\text{, } |S| = 6 \Rightarrow 2^6 = 64 \text{ subsets}
+
+\text{Letter probability (2026 \#17): }(2,k) \text{ chosen from } \{(2,3),(2,5),(2,7),(2,11),(2,13),(2,17)\}
+2^2 + k^2 = 4 + k^2 \text{ — test each: prime iff } 4+k^2 \text{ is prime}
+k=3\text{: }13\checkmark,\; k=5\text{: }29\checkmark,\; k=7\text{: }53\checkmark,\;
+k=11\text{: }125=5^3 \times,\; k=13\text{: }173\checkmark,\; k=17\text{: }293\checkmark
+\Pr = \frac{5}{6}
+
+% ==============================================================
+%  DOMAIN 16: BINOMIAL THEOREM
+% ==============================================================
+
+(a + b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r
+
+\text{General term: } T_{r+1} = \binom{n}{r} a^{n-r} b^r
+
+\text{Number of terms in } (a+b)^n\text{: } n+1
+
+\text{Sum of all coefficients: set } a = b = 1 \Rightarrow 2^n
+
+\text{Sum of numerical coefficients in } \left(x + \frac{1}{x}\right)^5\text{: set } x = 1 \Rightarrow 2^5 = 32
+
+\text{Specific term example — } (a+b)^{22}\text{, term } ka^wb^{20}\text{:}
+r = 20 \Rightarrow T_{21} = \binom{22}{20} a^2 b^{20} = 231\,a^2 b^{20}
+k = 231, w = 2 \Rightarrow k + w = 233
+
+\text{Equal consecutive terms condition:}
+T_{r+1} = T_{r+2} \Rightarrow \binom{n}{r} = \binom{n}{r+1}
+\Rightarrow \frac{n!}{r!(n-r)!} = \frac{n!}{(r+1)!(n-r-1)!}
+\Rightarrow r+1 = n-r \Rightarrow r = \frac{n-1}{2}
+
+\text{Example (2023 \#11): 5th and 6th terms of } (x+y)^n \text{ equal}
+\binom{n}{4} = \binom{n}{5} \Rightarrow \frac{n!}{4!(n-4)!} = \frac{n!}{5!(n-5)!}
+\Rightarrow 5 = n - 4 \Rightarrow n = 9
+\text{3rd term: } \binom{9}{2}x^7y^2 = 36x^7y^2 \Rightarrow \text{coefficient} = 36
+
+\text{State 2022 \#9: } (2x+c)^8\text{, 4th and 5th terms equal coefficient}
+T_4 = \binom{8}{3}(2x)^5 c^3 = 56 \cdot 32 x^5 c^3
+T_5 = \binom{8}{4}(2x)^4 c^4 = 70 \cdot 16 x^4 c^4
+\text{Setting numerical coefficients equal: } 56 \cdot 32 = 70 \cdot 16 \cdot c
+c = \frac{56 \cdot 32}{70 \cdot 16} = \frac{1792}{1120} = \frac{8}{5}
+
+\text{Large exponent binomial (2020 \#17): }(2x+7)^{101}\text{, coefficient of } x^{53}
+T_{53+1} = \binom{101}{53}(2x)^{48}(7)^{53} \text{ — wait, } r = 101-53 = 48\text{ for } x^{53}
+T_{54} = \binom{101}{53} \cdot 2^{53} \cdot x^{53} \cdot 7^{48}
+k = \binom{101}{53} \cdot 2^{53} \cdot 7^{48}
+
+\text{Pascal's Triangle shortcut: } \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1}
+
+% ==============================================================
+%  DOMAIN 17: CONICS
+% ==============================================================
+
+\text{--- Circle ---}
+(x - h)^2 + (y - k)^2 = r^2
+\text{Center } (h,k)\text{, radius } r
+
+\text{--- Ellipse (horizontal major axis) ---}
+\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1, \quad a > b > 0
+\text{Major axis length} = 2a, \quad \text{minor axis length} = 2b
+c^2 = a^2 - b^2, \quad \text{foci at } (h \pm c,\, k)
+
+\text{--- Ellipse (vertical major axis) ---}
+\frac{(x-h)^2}{b^2} + \frac{(y-k)^2}{a^2} = 1, \quad a > b
+\text{Foci at } (h,\, k \pm c)
+
+\text{--- Hyperbola (horizontal) ---}
+\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1
+c^2 = a^2 + b^2
+
+\text{--- Parabola (vertical axis) ---}
+(x - h)^2 = 4p(y - k)
+\text{Vertex } (h,k)\text{, focus } (h,\, k+p)\text{, directrix } y = k - p
+
+\text{--- Parabola (horizontal axis) ---}
+(y - k)^2 = 4p(x - h)
+\text{Focus } (h+p,\, k)\text{, directrix } x = h - p
+
+\text{Example (2020 \#13): } x = \frac{1}{8}(y-3)^2
+\Rightarrow (y-3)^2 = 8(x-0)
+\Rightarrow 4p = 8 \Rightarrow p = 2
+\Rightarrow \text{focus at } (0+2,\, 3) = (2,\, 3)
+
+\text{Focus-directrix to equation (2022 \#19):}
+\text{Focus } (-2,3)\text{, directrix } y = -1
+p = \frac{3-(-1)}{2} = 2\text{, vertex at } (-2,\, 1)
+(x+2)^2 = 4(2)(y-1) = 8(y-1)
+x^2 + 4x + 4 = 8y - 8
+x^2 + 4x - 8y + 12 = 0
+\Rightarrow A=1,B=0,C=4,D=-8,E=12
+A+B+C+D+E = 1+0+4+(-8)+12 = 9
+
+\text{Minor axis of ellipse: }
+x^2 + 2x + 3(y^2 - 12y) + 3 = 0
+\text{(complete the square)}
+
+% ==============================================================
+%  DOMAIN 18: VARIATION
+% ==============================================================
+
+\text{Direct: } y = kx \quad (y \propto x)
+
+\text{Inverse: } y = \frac{k}{x} \quad (xy = k)
+
+\text{Joint: } y = kxz \quad (y \propto xz)
+
+\text{Combined: } y = \frac{kxz}{w}
+
+\text{Find } k \text{ from initial conditions, then solve for unknown}
+
+\text{Example (2022 \#4): } x \text{ varies jointly with } y \text{ and } z
+x = 25 \text{ when } y = 6,\, z = 10 \Rightarrow 25 = k(6)(10) \Rightarrow k = \frac{5}{12}
+x = \frac{5}{12}(20)(30) = 250
+
+\text{Example (2018 \#11): } x = k \cdot \frac{z \cdot w^3}{y}
+\text{Given: constant} = 64
+z = 2w,\; x = 4y \Rightarrow 4y = 64 \cdot \frac{2w \cdot w^3}{y}
+\text{Also } y = 4x \text{... set up and solve}
+
+% ==============================================================
+%  DOMAIN 19: SYSTEMS OF EQUATIONS AND INEQUALITIES
+% ==============================================================
+
+\text{Substitution: solve one equation for one variable, substitute}
+\text{Elimination: add/subtract equations to eliminate a variable}
+\text{Matrix method: } \begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}e\\f\end{pmatrix}
+
+\text{Nonlinear system (2014 \#9): }
+\begin{array}{l} x + y = y + 5 \\ x + y = 20 \end{array}
+\Rightarrow x = 5,\; y = 15 \Rightarrow (5,15)
+
+\text{Area of polygonal region (inequality system):}
+\text{1. Find all boundary lines}
+\text{2. Solve pairs to get vertices}
+\text{3. Apply Shoelace Formula:}
+A = \frac{1}{2}\left|x_1(y_2 - y_n) + x_2(y_3 - y_1) + \cdots + x_n(y_1 - y_{n-1})\right|
+
+\text{Shoelace (determinant form):}
+A = \frac{1}{2}\left|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1} y_i)\right| \quad \text{(indices mod }n\text{)}
+
+\text{Example (2018 \#20): } x+y \le 5,\; 2x-y \ge -4,\; x \ge 0,\; y \ge 0
+\text{Find vertices, apply Shoelace}
+
+\text{Diophantine integer solutions (2026 \#11): } 5x + 16y = 38
+\text{One solution: } x = 6,\; y = \frac{1}{2} \text{— not integer}
+\text{Try: } y = 1\text{: } 5x = 22 \text{ — no};\; y = -1\text{: }5x = 54 \text{ — no}
+y = 2\text{: }5x = 6 \text{ — no};\; y = -3\text{: }5x = 86 \text{ — no}
+\text{General solution: } x = \frac{38-16y}{5}
+\text{Need } 38 - 16y \equiv 0 \pmod{5} \Rightarrow 3 - y \equiv 0 \Rightarrow y \equiv 3 \pmod{5}
+y = 3\text{: }x = 2;\; y = -2\text{: }x = 14;\; y = 8\text{: }x = -10;\; \ldots
+\text{Three largest negative products when } xy < 0\text{: ...}
+
+% ==============================================================
+%  DOMAIN 20: COORDINATE GEOMETRY AND DISTANCE
+% ==============================================================
+
+\text{Distance between two points:}
+d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+
+\text{Midpoint: } M = \left(\frac{x_1+x_2}{2},\, \frac{y_1+y_2}{2}\right)
+
+\text{Slope: } m = \frac{y_2 - y_1}{x_2 - x_1}
+
+\text{Slope-intercept: } y = mx + b
+
+\text{Point-slope: } y - y_1 = m(x - x_1)
+
+\text{Perpendicular slopes: } m_1 \cdot m_2 = -1
+
+\text{Parallel: same slope, different intercept}
+
+\text{Distance from point } (x_0, y_0) \text{ to line } Ax + By + C = 0\text{:}
+d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}
+
+\text{Example (2020 \#12): distance from origin to } 5x - 12y + 26 = 0
+d = \frac{|0 + 0 + 26|}{\sqrt{25+144}} = \frac{26}{13} = 2
+
+\text{Distance between parallel lines } Ax+By+C_1=0 \text{ and } Ax+By+C_2=0\text{:}
+d = \frac{|C_1 - C_2|}{\sqrt{A^2 + B^2}}
+
+\text{Example (2018 \#7): } 2x - 3y + 1 = 0 \text{ and } 2x - 3y + 5 = 0 \text{ (rewrite to same form)}
+
+\text{Line and circle intersection: substitute line into circle equation}
+\text{Discriminant tells number of intersections: } \Delta > 0\text{: 2 pts}, \Delta = 0\text{: tangent}, \Delta < 0\text{: none}
+
+\text{Distance between two intersection points (State 2024 \#17):}
+y = x+1 \text{ and } x^2+y^2=25
+x^2+(x+1)^2 = 25 \Rightarrow 2x^2+2x-24 = 0 \Rightarrow x^2+x-12=0
+(x+4)(x-3) = 0 \Rightarrow x = -4,\; 3
+\text{Points: }(-4,-3)\text{ and }(3,4)
+d = \sqrt{49+49} = 7\sqrt{2}
+
+\text{Space diagonal of box with face diagonals } p, q, r\text{:}
+\text{Face diagonals: } a^2+b^2 = p^2,\; a^2+c^2 = q^2,\; b^2+c^2 = r^2
+a^2+b^2+c^2 = \frac{p^2+q^2+r^2}{2}
+\text{Space diagonal} = \sqrt{a^2+b^2+c^2} = \sqrt{\frac{p^2+q^2+r^2}{2}}
+
+% ==============================================================
+%  DOMAIN 21: NUMBER BASES
+% ==============================================================
+
+\text{Converting base } b \text{ to base 10:}
+(d_n d_{n-1} \cdots d_1 d_0)_b = d_n \cdot b^n + d_{n-1} \cdot b^{n-1} + \cdots + d_1 \cdot b + d_0
+
+\text{Example: } (264)_b = 2b^2 + 6b + 4
+
+\text{Example (2018 \#14): } (264)_b = (1030)_c,\; |b-c| = 5
+2b^2 + 6b + 4 = c^3 + 3c
+\text{Try } b = 7,\; c = 2\text{: }98+42+4=144;\; 8+6=14 \text{ — no}
+\text{Try } b = 8,\; c = 3\text{: }128+48+4=180;\; 27+9=36 \text{ — no}
+\text{Try } b = 7,\; c = 2\text{ (bases differ by 5): yes, } |7-2|=5
+2(49)+6(7)+4 = 98+42+4 = 144
+1(27)+0(9)+3(3)+0 = 27+0+9+0 = 36 \text{ — wrong}
+\text{Try } (264)_7\text{: digit 6 requires base} \ge 7; (1030)_c\text{: digit 3 requires base} \ge 4
+b = 7, c = 2 \text{ invalid (digit 6 in base 2)}
+\text{Try } b = 8, c = 3\text{: } (264)_8 = 128+48+4=180;\; (1030)_3=27+9=36 \text{ — differ}
+\text{Try } b = 9, c = 4\text{: } (264)_9 = 162+54+4=220;\; (1030)_4=64+12=76 \text{ — differ}
+
+\text{State 2024 \#9: digit } m \text{ such that } (mmmm)_{m+1} = (511)_{10}
+m \cdot (m+1)^3 + m(m+1)^2 + m(m+1) + m = 511
+m\!\left[(m+1)^3+(m+1)^2+(m+1)+1\right] = 511
+m \cdot \frac{(m+1)^4 - 1}{(m+1)-1} = 511
+\text{Try } m = 4\text{: } 4(5^3+5^2+5+1) = 4(125+25+5+1) = 4(156)=624 \text{ — no}
+\text{Try } m = 3\text{: } 3(64+16+4+1) = 3(85) = 255 \text{ — no}
+\text{Try } m = 4\text{: see above. }m=4\text{: }(4444)_5=4(156)=624
+m=3\text{: }(3333)_4=3(85)=255; \text{ try } m=4 \Rightarrow 511\text{ doesn't work by }m\text{...}
+\text{Actually: } (mmmm)_{m+1} = m\!\left[\frac{(m+1)^4-1}{m}\right] = (m+1)^4-1
+(m+1)^4 = 512 = 2^9 \Rightarrow m+1 \text{ not an integer root... }
+\text{Hmm — check: }(m+1)^4 - 1 = 511, (m+1)^4 = 512, m+1 \ne \text{integer}
+\text{Actually } \sum_{k=0}^{3}(m+1)^k = \frac{(m+1)^4-1}{m}
+\text{Then } m \cdot \frac{(m+1)^4-1}{m} = (m+1)^4-1=511 \Rightarrow (m+1)^4 = 512
+\text{Not perfect 4th power, so recheck: }5^4=625, 4^4=256, 3^4=81
+\text{So digits form: } m \cdot \sum_{k=0}^{3}(m+1)^k = 511
+m=4\text{: } 4(1+5+25+125)=4\cdot 156=624\ne511
+m=3\text{: }3(1+4+16+64)=3\cdot85=255\ne511
+
+\text{Operations in base }b\text{: carry when digit} \ge b
+
+% ==============================================================
+%  DOMAIN 22: ABSOLUTE VALUE
+% ==============================================================
+
+|x| = \begin{cases} x & \text{if } x \ge 0 \\ -x & \text{if } x < 0 \end{cases}
+
+\text{Equation } |f(x)| = k\text{: } f(x) = k \text{ or } f(x) = -k
+
+\text{Inequality } |f(x)| < k\text{: } -k < f(x) < k \quad (k > 0)
+
+\text{Inequality } |f(x)| > k\text{: } f(x) > k \text{ or } f(x) < -k
+
+\text{Example (2014 \#2): } |x+1| = 4 - 3 = 1
+x+1 = 1 \Rightarrow x = 0\quad\text{or}\quad x+1=-1 \Rightarrow x=-2
+
+\text{Count integers (2020 \#10): } 2|3x-5| \le 20 \Rightarrow |3x-5| \le 10
+-10 \le 3x-5 \le 10 \Rightarrow -5 \le 3x \le 15 \Rightarrow -\frac{5}{3} \le x \le 5
+\text{Integers: } -1, 0, 1, 2, 3, 4, 5 \Rightarrow 7 \text{ integers}
+
+\text{Sum of integers in } \left|\frac{2x+1}{3}\right| < 4\text{ (2022 \#6):}
+-4 < \frac{2x+1}{3} < 4 \Rightarrow -12 < 2x+1 < 12 \Rightarrow -\frac{13}{2} < x < \frac{11}{2}
+\text{Integers: } -6,-5,-4,-3,-2,-1,0,1,2,3,4,5
+\text{Sum} = \frac{12(-6+5)}{2} = 6(-1) = -6
+
+\text{Area bounded by } |x| + |y| = 20\text{:}
+\text{Diamond with vertices } (\pm20, 0)\text{ and }(0, \pm20)
+A = \frac{1}{2}d_1 d_2 = \frac{1}{2}(40)(40) = 800
+
+% ==============================================================
+%  DOMAIN 23: RATIONAL EXPRESSIONS AND EQUATIONS
+% ==============================================================
+
+\text{Simplifying: factor numerator and denominator, cancel common factors}
+
+\text{Adding fractions: } \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}
+
+\text{Complex fractions: multiply numerator and denominator by LCD}
+
+\text{Example: } \frac{x^4 - 9x^3 + 9x}{x^2 + 4x - 12}
+= \frac{x(x^3 - 9x^2 + 9)}{(x+6)(x-2)}
+
+\text{Rational equation: multiply both sides by LCD, check extraneous solutions}
+
+\text{Example: } \frac{5}{x} - \frac{3}{x+4} = 2
+5(x+4) - 3x = 2x(x+4)
+5x+20-3x = 2x^2+8x
+2x+20 = 2x^2+8x
+x^2+3x-10 = 0
+(x+5)(x-2) = 0 \Rightarrow x=-5 \text{ or } x=2
+
+\text{Rational functions and asymptotes:}
+\text{Vertical asymptote: where denominator} = 0
+\text{Horizontal asymptote: compare degrees of numerator and denominator}
+
+f(x) = \frac{3x+10}{(x+4)(x-k)}\text{, x-intercept at 30: } f(30) = 0
+3(30) + 10 = 0 \Rightarrow \text{numerator never zero at }x=30\text{ unless we check differently}
+\text{x-intercept: } 3x+10=0 \Rightarrow x=-\frac{10}{3}
+
+% ==============================================================
+%  DOMAIN 24: EXPONENTS AND RADICALS
+% ==============================================================
+
+a^m \cdot a^n = a^{m+n}
+
+\frac{a^m}{a^n} = a^{m-n}
+
+(a^m)^n = a^{mn}
+
+(ab)^n = a^n b^n
+
+a^0 = 1 \quad (a \ne 0)
+
+a^{-n} = \frac{1}{a^n}
+
+a^{m/n} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m
+
+\text{Simplifying radicals:}
+\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}
+
+\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}
+
+\sqrt[n]{a^m} = a^{m/n}
+
+\text{Rationalizing: } \frac{a}{\sqrt{b}} = \frac{a\sqrt{b}}{b}
+
+\frac{a}{\sqrt{b}+\sqrt{c}} = \frac{a(\sqrt{b}-\sqrt{c})}{b-c}
+
+\text{Nested/compound radical (2014 \#11): } 2\sqrt{3} + 3\sqrt{4} - 3\sqrt{2}
+
+\text{Example (2026 \#12): } k = \sqrt{340} - \sqrt[3]{625}
+\sqrt{340} = 2\sqrt{85}, \quad \sqrt[3]{625} = \sqrt[3]{5^4} = 5\sqrt[3]{5}
+k = 2\sqrt{85} - 5\sqrt[3]{5}
+
+\text{Solving radical equations: isolate radical, square both sides, check extraneous:}
+-2 = -x + \sqrt{-5x+46}
+\sqrt{-5x+46} = x - 2
+-5x + 46 = x^2 - 4x + 4
+x^2 + x - 42 = 0
+(x+7)(x-6) = 0 \Rightarrow x = -7 \text{ (extraneous)}, x = 6\checkmark
+
+\text{Simplify mixed radicals (2024 \#3): } (\sqrt[3]{9})(\sqrt[4]{16})(\sqrt[6]{36})
+= 9^{1/3} \cdot 16^{1/4} \cdot 36^{1/6}
+= (3^2)^{1/3} \cdot (2^4)^{1/4} \cdot (6^2)^{1/6}
+= 3^{2/3} \cdot 2 \cdot 6^{1/3}
+= 2 \cdot 3^{2/3} \cdot 6^{1/3}
+= 2 \cdot 3^{2/3} \cdot 2^{1/3} \cdot 3^{1/3}
+= 2^{4/3} \cdot 3
+= 3\sqrt[3]{4}
+k = 3, w = 4 \Rightarrow k+w = 7
+
+% ==============================================================
+%  DOMAIN 25: WORK RATE AND MIXTURE PROBLEMS
+% ==============================================================
+
+\text{Work rate formula: } \text{Rate} \times \text{Time} = \text{Work}
+
+\text{For identical workers: } R_{total} = n \cdot R_{one}
+
+\text{Man-hours: } M_1 T_1 / W_1 = M_2 T_2 / W_2
+
+\text{Example (2026 \#10): 5 mules eat 3 bales in 6 hours}
+\text{Rate per mule} = \frac{3}{5 \cdot 6} = \frac{1}{10} \text{ bales/hour}
+\text{Time for 5 mules to eat 4 bales} = \frac{4}{5 \cdot 1/10} = \frac{4}{1/2} = 8 \text{ hours}
+
+\text{Mason example (2018 \#16): 6 masons tile 540 ft}^2 \text{ in 4 hours}
+\text{Rate} = \frac{540}{6 \cdot 4} = 22.5 \text{ ft}^2\text{/mason/hour}
+\text{9 masons, 1620 ft}^2\text{: time} = \frac{1620}{9 \cdot 22.5} = \frac{1620}{202.5} = 8 \text{ hours}
+
+\text{Painting (2020 \#16): 2 men paint 3 houses in 4 weeks}
+\text{Rate} = \frac{3}{2 \cdot 4} = \frac{3}{8} \text{ houses/man/week}
+\text{1 house, 2 men: } t = \frac{1}{2 \cdot 3/8} = \frac{1}{3/4} = \frac{4}{3} \text{ weeks}
+
+\text{Mixture problem (State 2022 \#14): 7000 L at 20\% OJ}
+\text{Drain } x \text{ liters, replace with 80\% OJ:}
+0.20(7000-x) + 0.80x = 0.25(7000)
+1400 - 0.20x + 0.80x = 1750
+0.60x = 350 \Rightarrow x = \frac{350}{0.60} = \frac{1750}{3}
+
+\text{Mixing concentrations (2026 \#4): 1 L of 10\% + 4 L of }k\text{\% = 5 L of 8\%}
+0.10(1) + \frac{k}{100}(4) = 0.08(5)
+0.10 + 0.04k = 0.40
+0.04k = 0.30 \Rightarrow k = 7.5
+
+% ==============================================================
+%  DOMAIN 26: OPTIMIZATION
+% ==============================================================
+
+\text{Revenue function: } R(x) = \text{price} \times \text{quantity}
+
+\text{If price increases by } \Delta p\text{, quantity decreases by } m \Delta p\text{:}
+Q = Q_0 - m(p - p_0)
+R = p \cdot Q = p(Q_0 - mp + mp_0)
+R = -mp^2 + (Q_0 + mp_0)p
+
+\text{Maximize: vertex at } p^* = \frac{Q_0 + mp_0}{2m}
+
+\text{Example (2024 \#10): 360 dinners at \$50; every \$5 increase} \to \text{20 fewer dinners}
+p = 50 + 5t, \quad Q = 360 - 20t
+R = (50+5t)(360-20t) = 18000 - 1000t + 1800t - 100t^2
+R = -100t^2 + 800t + 18000
+\text{Vertex: } t = \frac{800}{200} = 4 \Rightarrow p = 50 + 20 = \$70
+R(4) = 70 \times (360-80) = 70 \times 280 = 19600\checkmark
+
+\text{Limousine example (2023 \#15): \$10/ride, 300 riders/day}
+\text{Every \$1 increase} \to \text{15 fewer riders}
+p = 10 + x, \quad Q = 300 - 15x
+R = (10+x)(300-15x) = 3000 + 300x - 150x - 15x^2 = -15x^2 + 150x + 3000
+\text{Vertex: } x = \frac{150}{30} = 5 \Rightarrow p = \$15
+
+\text{AM-GM inequality for maximizing product given sum:}
+xy \le \left(\frac{x+y}{2}\right)^2 \text{ with equality when } x = y
+
+\text{Example (2018 \#9): } 4x + 5y = 20\text{, maximize } xy
+\text{By AM-GM or Lagrange: max at } 4x = 5y
+4x = 5y\text{ and }4x+5y=20 \Rightarrow 8x=20 \Rightarrow x=2.5, y=2
+xy_{\max} = 2.5 \times 2 = 5
+
+% ==============================================================
+%  DOMAIN 27: SETS AND VENN DIAGRAMS
+% ==============================================================
+
+|A \cup B| = |A| + |B| - |A \cap B|
+
+|A \cup B \cup C| = |A|+|B|+|C| - |A\cap B| - |A\cap C| - |B\cap C| + |A\cap B\cap C|
+
+A^c = \text{complement of } A \text{ (elements not in } A\text{)}
+
+|A^c| = |U| - |A|
+
+\text{Subsets of } S\text{: } 2^{|S|}
+
+\text{Power set of } \{A,L,G,T,W,O\}\text{: } 2^6 = 64
+
+\text{Venn example (2020 \#2): 52 students}
+|M \cup S| = |M| + |S| - |M \cap S| = 24 + 10 - 5 = 29
+|\text{neither}| = 52 - 29 = 23
+
+% ==============================================================
+%  DOMAIN 28: MODULAR ARITHMETIC AND DIVISIBILITY
+% ==============================================================
+
+a \equiv b \pmod{m} \iff m \mid (a - b)
+
+(a + b) \bmod m = ((a \bmod m) + (b \bmod m)) \bmod m
+
+(a \cdot b) \bmod m = ((a \bmod m) \cdot (b \bmod m)) \bmod m
+
+10 \equiv 4 \pmod{6}, \quad 10^2 \equiv 4 \pmod{6}, \quad 10^n \equiv 4 \pmod{6} \quad (n \ge 1)
+
+\text{Units digit of } (3^{33}+5^{55}+7^{77}+9^{99})\text{:}
+\text{Cycle of 3: }3,9,7,1\text{ (period 4) } \Rightarrow 3^{33}=3^{4\cdot8+1}\to3
+\text{Cycle of 5: always 5}
+\text{Cycle of 7: }7,9,3,1\text{ (period 4) } \Rightarrow 7^{77}=7^{4\cdot19+1}\to7
+\text{Cycle of 9: }9,1\text{ (period 2) } \Rightarrow 9^{99}\to9
+\text{Units digit: } 3+5+7+9=24 \Rightarrow \text{units digit}=4
+
+\text{Remainder of } mn+m+n \div 8 \text{ (2022 \#14):}
+n \equiv 1 \pmod{16} \Rightarrow n \equiv 1 \pmod{8}
+m \equiv 4 \pmod{24} \Rightarrow m \equiv 4 \pmod{8}
+mn + m + n \equiv 4 + 4 + 1 = 9 \equiv 1 \pmod{8}
+
+% ==============================================================
+%  DOMAIN 29: FLOOR FUNCTION
+% ==============================================================
+
+\lfloor x \rfloor = \text{greatest integer} \le x
+
+\lfloor 3.7 \rfloor = 3, \quad \lfloor -2.79 \rfloor = -3, \quad \lfloor 5 \rfloor = 5
+
+\text{Note: for negatives, floor goes toward } -\infty
+
+\lfloor 35.5 \rfloor + \lfloor -2.79 \rfloor - \lfloor 10.25 \rfloor = 35 + (-3) - 10 = 22
+
+\text{Ceiling function: } \lceil x \rceil = \text{smallest integer} \ge x
+\lceil 3.2 \rceil = 4, \quad \lceil -2.1 \rceil = -2
+
+% ==============================================================
+%  DOMAIN 30: CONTINUED FRACTIONS AND NESTED EXPRESSIONS
+% ==============================================================
+
+\text{Evaluate from the innermost level outward}
+
+\text{Example: } 1 + \cfrac{1}{2 + \cfrac{1}{3 + \cfrac{1}{2 + \cdots}}}
+
+\text{For repeating continued fractions, let } x = 2 + \cfrac{1}{3 + \cfrac{1}{x}}
+3 + \frac{1}{x} = \frac{3x+1}{x}
+2 + \frac{x}{3x+1} = \frac{7x+2}{3x+1}
+x = \frac{7x+2}{3x+1} \Rightarrow 3x^2+x = 7x+2 \Rightarrow 3x^2-6x-2=0
+x = \frac{6 \pm \sqrt{36+24}}{6} = \frac{6 \pm \sqrt{60}}{6} = 1 \pm \frac{\sqrt{60}}{6}
+= 1 \pm \frac{\sqrt{15}}{3}
+\text{Take positive: } x = 1 + \frac{\sqrt{15}}{3} = \frac{3+\sqrt{15}}{3}
+
+\text{Then the full expression: }1 + \frac{1}{x} = 1 + \frac{3}{3+\sqrt{15}} = 1 + \frac{3(3-\sqrt{15})}{9-15}
+= 1 + \frac{3(3-\sqrt{15})}{-6} = 1 - \frac{3-\sqrt{15}}{2} = \frac{2-3+\sqrt{15}}{2} = \frac{-1+\sqrt{15}}{2}
+
+k=-1,\; m=1,\; p=15,\; q=2 \Rightarrow k+m+p+q = 17
+
+% ==============================================================
+%  DOMAIN 31: HARMONIC AND GEOMETRIC MEANS
+% ==============================================================
+
+\text{Arithmetic mean (AM): } A = \frac{a+b}{2}
+
+\text{Geometric mean (GM): } G = \sqrt{ab}
+
+\text{Harmonic mean (HM): } H = \frac{2ab}{a+b} = \frac{2}{\frac{1}{a}+\frac{1}{b}}
+
+\text{AM-GM inequality: } A \ge G \text{ with equality iff } a = b
+
+\text{HM-GM inequality: } H \le G
+
+\text{For } n \text{ numbers: } HM = \frac{n}{\frac{1}{x_1}+\frac{1}{x_2}+\cdots+\frac{1}{x_n}}
+
+\text{Quotient: geometric mean / arithmetic mean of 6 and 12:}
+G = \sqrt{72} = 6\sqrt{2}, \quad A = 9
+\frac{G}{A} = \frac{6\sqrt{2}}{9} = \frac{2\sqrt{2}}{3}
+
+% ==============================================================
+%  DOMAIN 32: ADDITIONAL COMPETITION FORMULAS
+% ==============================================================
+
+\text{Pigeonhole Principle: if } n \text{ items in } k \text{ boxes with } n > k\text{,}
+\text{at least one box has} \ge \lceil n/k \rceil \text{ items}
+
+\text{Pigeonhole — largest number of holes for 200 pigeons (2014 \#3):}
+\text{Holes with 1,2,3,...,k pigeons; need sum} \ge 200\text{:}
+\frac{k(k+1)}{2} \ge 200 \Rightarrow k \ge 20 \text{ (since } \frac{19\cdot20}{2}=190 < 200)
+\text{Answer: } k = 19 \text{ (with } 190 \text{ pigeons — need one more hole, so max is 19)}
+
+\text{Exponential equation } a^f = b^g \text{: take } \log \text{ of both sides}
+a^{2x^2+61xy-65y^2} = \ldots \text{ factor the exponent}
+
+\text{2026 \#6: } (2x+1)(3x-1)(54) = 6(kx+w)
+\text{Expand left: } 54(6x^2-2x+3x-1) = 54(6x^2+x-1) = 324x^2+54x-54
+\text{So } 6(kx+w) \text{ can't be quadratic unless...}
+\text{Actually: check if this means evaluate at specific } x \text{ or compare}
+
+\text{Exponential equation = 1 (2026 \#14):}
+(x^2-5x+5)^{x^2-11x+30} = 1
+\text{Case 1: exponent} = 0 \Rightarrow x^2-11x+30=0 \Rightarrow (x-5)(x-6)=0 \Rightarrow x=5,6
+\text{(Check base} \ne 0\text{: } x=5\text{: base}=5-25+5=-15\ne0; x=6\text{: base}=36-30+5=11\ne0\text{)}
+\text{Case 2: base} = 1 \Rightarrow x^2-5x+5=1 \Rightarrow x^2-5x+4=0 \Rightarrow (x-1)(x-4)=0 \Rightarrow x=1,4
+\text{Case 3: base} = -1 \text{ and exponent is even:}
+x^2-5x+5=-1 \Rightarrow x^2-5x+6=0 \Rightarrow (x-2)(x-3)=0 \Rightarrow x=2,3
+x=2\text{: exponent}=4-22+30=12\text{ (even)}\checkmark;\; x=3\text{: exponent}=9-33+30=6\text{ (even)}\checkmark
+\text{Sum of all solutions: }1+2+3+4+5+6=21
+
+\text{Algebraic identity (2026 \#16): } X = kA+wB,\; A\ne0,\; B\ne0
+\frac{X}{AB} - \frac{X-A}{B^2} - \frac{X-B}{A^2} = 0
+\text{Substitute } X=kA+wB\text{:}
+\frac{kA+wB}{AB} - \frac{kA+wB-A}{B^2} - \frac{kA+wB-B}{A^2} = 0
+\frac{k}{B}+\frac{w}{A} - \frac{(k-1)A+wB}{B^2} - \frac{kA+(w-1)B}{A^2} = 0
+\text{This must hold for all }A,B\text{: equate coefficients}
+\Rightarrow k=1, w=1 \Rightarrow k+w=2
+
+\text{Pell-like and special recursive: compute manually term by term}
+
+\text{Median/adjusted scores (2026 \#19):}
+\text{Sorted: }62,68,73,77,78,82,86,86,90,92
+\text{Median} = \frac{78+82}{2} = 80
+\text{Adjustment: } +\frac{80}{10} = +8 \text{ to each score}
+\text{Lowest score 62} \to 70\text{; percentage increase: } \frac{8}{62}\approx 12.903\text{\%}
