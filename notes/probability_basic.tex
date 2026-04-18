@@ -1,47 +1,47 @@
-\Pr(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}
+\Pr(A) = \frac{favorable outcomes}{total outcomes}
 
 0 \le \Pr(A) \le 1
 
-\Pr(\text{not } A) = 1 - \Pr(A)
+\Pr(not  A) = 1 - \Pr(A)
 
 \Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)
 
-\Pr(A \cap B) = \Pr(A) \cdot \Pr(B) \quad \text{(if independent)}
+\Pr(A \cap B) = \Pr(A) \cdot \Pr(B) \quad (if independent)
 
-\text{Venn diagram (2020 \#2): 52 seniors}
+Venn diagram (2020 \#2): 52 seniors
 |M \cup S| = |M| + |S| - |M \cap S| = 24 + 10 - 5 = 29
-|\text{neither}| = 52 - 29 = 23
+|neither| = 52 - 29 = 23
 
-\text{At least one success in } n \text{ independent trials:}
-\Pr(\text{at least 1}) = 1 - (1-p)^n
+At least one success in  n  independent trials:
+\Pr(at least 1) = 1 - (1-p)^n
 
-\text{Example (2013 \#9): } p = 0.73\text{, need } \Pr(\text{at least 1}) < 0.99
+Example (2013 \#9):  p = 0.73, need  \Pr(at least 1) < 0.99
 1 - (0.27)^n < 0.99 \rightarrow (0.27)^n > 0.01
 n\log(0.27) > \log(0.01) \rightarrow n < \frac{2}{0.5686} \approx 3.52
-\rightarrow \text{maximum whole number: } n = 3
+\rightarrow maximum whole number:  n = 3
 
-\text{Geometric probability (alternating turns):}
+Geometric probability (alternating turns):
 \Pr(M) = \frac{p}{1 - (1-p)(1-q)}
 
-\text{Molly } (p = \frac{3}{5})\text{, Connie }(q = \frac{3}{4})\text{, Molly goes first:}
+Molly  (p = \frac{3}{5}), Connie (q = \frac{3}{4}), Molly goes first:
 \Pr(M) = \frac{3/5}{1 - (2/5)(1/4)} = \frac{3/5}{9/10} = \frac{2}{3}
 
-\text{Dart problem (2022 \#10): 28 hits out of 112; need} > 35\%\text{ hitting}
+Dart problem (2022 \#10): 28 hits out of 112; need > 35\% hitting
 \frac{28 + x}{112 + x} > 0.35
 28 + x > 39.2 + 0.35x
 0.65x > 11.2 \rightarrow x > 17.2 \rightarrow x_{\min} = 18
 
-\text{Probability of prime (2024 \#20): } x \in \{6,7,8,\cdot\cdot\cdot,14\}\text{, } \Pr(x^2-29 \text{ prime})
+Probability of prime (2024 \#20):  x \in \{6,7,8,\cdot\cdot\cdot,14\},  \Pr(x^2-29  prime)
 \begin{array}{c|c|c}
-x & x^2 - 29 & \text{prime?} \\ \
-6 & 7 & \text{yes} \\
-7 & 20 & \text{no} \\
-8 & 35 & \text{no} \\
-9 & 52 & \text{no} \\
-10 & 71 & \text{yes} \\
-11 & 92 & \text{no} \\
-12 & 115 & \text{no} \\
-13 & 140 & \text{no} \\
-14 & 167 & \text{yes}
+x & x^2 - 29 & prime? \\ \
+6 & 7 & yes \\
+7 & 20 & no \\
+8 & 35 & no \\
+9 & 52 & no \\
+10 & 71 & yes \\
+11 & 92 & no \\
+12 & 115 & no \\
+13 & 140 & no \\
+14 & 167 & yes
 \end{array}
 \Pr = \frac{3}{9} = \frac{1}{3}

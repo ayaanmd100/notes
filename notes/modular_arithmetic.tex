@@ -1,19 +1,19 @@
-a \equiv b \text{ (\text{ mod } } m \text{)} \text{ iff } m | (a - b)
+a \equiv b (mod  m ) \rightarrow  m | (a - b)
 
-(a + b) \text{ mod } m = ((a \text{ mod } m) + (b \text{ mod } m)) \text{ mod } m
+(a + b)  mod  m = ((a  mod  m) + (b  mod  m))  mod  m
 
-(a \cdot b) \text{ mod } m = ((a \text{ mod } m) \cdot (b \text{ mod } m)) \text{ mod } m
+(a \cdot b)  mod  m = ((a  mod  m) \cdot (b  mod  m))  mod  m
 
-10 \equiv 4 \text{ (\text{ mod } } 6 \text{)}, \quad 10^2 \equiv 4 \text{ (\text{ mod } } 6 \text{)}, \quad 10^n \equiv 4 \text{ (\text{ mod } } 6 \text{)} \quad (n \ge 1)
+10 \equiv 4 (mod  6 ), \quad 10^2 \equiv 4 (mod  6 ), \quad 10^n \equiv 4 (mod  6 ) \quad (n \ge 1)
 
-\text{Units digit of } (3^{33}+5^{55}+7^{77}+9^{99})\text{:}
-\text{Cycle of 3: } 3,9,7,1 \text{ (period 4) } \rightarrow 3^{33}=3^{4\cdot8+1} \to 3
-\text{Cycle of 5: always 5}
-\text{Cycle of 7: } 7,9,3,1 \text{ (period 4) } \rightarrow 7^{77}=7^{4\cdot19+1} \to 7
-\text{Cycle of 9: } 9,1 \text{ (period 2) } \rightarrow 9^{99} \to 9
-\text{Units digit: } 3+5+7+9=24 \rightarrow \text{units digit} = 4
+Units digit of  (3^{33}+5^{55}+7^{77}+9^{99}):
+Cycle of 3:  3,9,7,1  (period 4)  \rightarrow 3^{33}=3^{4\cdot8+1} \to 3
+Cycle of 5: always 5
+Cycle of 7:  7,9,3,1  (period 4)  \rightarrow 7^{77}=7^{4\cdot19+1} \to 7
+Cycle of 9:  9,1  (period 2)  \rightarrow 9^{99} \to 9
+Units digit:  3+5+7+9=24 \rightarrow units digit = 4
 
-\text{Remainder of } mn+m+n \div 8 \text{ (2022 \#14):}
-n \equiv 1 \text{ (\text{ mod } } 16 \text{)} \rightarrow n \equiv 1 \text{ (\text{ mod } } 8 \text{)}
-m \equiv 4 \text{ (\text{ mod } } 24 \text{)} \rightarrow m \equiv 4 \text{ (\text{ mod } } 8 \text{)}
-mn + m + n \equiv 4 + 4 + 1 = 9 \equiv 1 \text{ (\text{ mod } } 8 \text{)}
+Remainder of  mn+m+n \div 8  (2022 \#14):
+n \equiv 1 (mod  16 ) \rightarrow n \equiv 1 (mod  8 )
+m \equiv 4 (mod  24 ) \rightarrow m \equiv 4 (mod  8 )
+mn + m + n \equiv 4 + 4 + 1 = 9 \equiv 1 (mod  8 )
