@@ -1,39 +1,33 @@
-2x2 determinant:
-\det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
+1. 2x2 determinant
 
-2x2 inverse:
-\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+$$ \det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc $$
 
-A matrix is singular (no inverse) when  \det = 0.
+2. 2x2 inverse
 
-Matrix multiplication:
-\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} e & f \\ g & h \end{pmatrix} = \begin{pmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{pmatrix}
+$$ \begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \frac{1}{ad-bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} $$
 
-Matrix equation  AX = B \rightarrow X = A^{-1}B
+No inverse when det = 0.
 
-3x3 determinant (cofactor expansion along row 1):
-\det\begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}
-= a(ei - fh) - b(di - fg) + c(dh - eg)
+3. Matrix multiplication
 
-Identity matrix:  I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad A \cdot I = I \cdot A = A
+$$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} e & f \\ g & h \end{pmatrix} = \begin{pmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{pmatrix} $$
 
-Example (2023 \#3):  \begin{pmatrix}5 & 4\\1 & 1\end{pmatrix}\begin{pmatrix}-1 & k\\-1 & 5\end{pmatrix} = \begin{pmatrix}1&0\\0&1\end{pmatrix}
-Entry (1,2):  5k + 20 = 0 \rightarrow k = -4
+4. Matrix equation: $AX = B$ means $X = A^{-1}B$
 
-Scalar multiplication:  c\begin{pmatrix}a&b\\c&d\end{pmatrix} = \begin{pmatrix}ca&cb\\cc&cd\end{pmatrix}
+5. 3x3 determinant (cofactor expansion along row 1)
 
-No inverse condition (State 2024): 
-\det\begin{pmatrix}24 & 16\\k & -8\end{pmatrix} = 0
-\rightarrow -192 - 16k = 0 \rightarrow k = -12
+$$ \det \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix} = a(ei-fh) - b(di-fg) + c(dh-eg) $$
 
-Matrix product entry formula (A is m x n, B is n x p):
-(AB)_{ij} = \sum_{k=1}^n A_{ik} \cdot B_{kj}
+6. No-inverse example
 
-Augmented matrix for 2x2 system (ax + by = e, cx + dy = f):
-\left[ \begin{array}{cc|c} a & b & e \\ c & d & f \end{array} \right]
+$$ \det \begin{pmatrix} 24 & 16 \\ k & -8 \end{pmatrix} = 0 \rightarrow -192-16k=0 \rightarrow k=-12 $$
 
-Augmented matrix for 3x3 system (row-reduced example):
-\left[ \begin{array}{ccc|c} 1 & -4 & -1 & b_1 \\ 0 & -1 & 0 & 2b_1 + b_3 \\ 0 & 4 & 2 & 4b_1 + b_2 \end{array} \right]
+7. Identity matrix
 
-Cramer's Rule (2x2 system):
-x = \frac{\det \begin{bmatrix} e & b \\ f & d \end{bmatrix}}{\det \begin{bmatrix} a & b \\ c & d \end{bmatrix}} \qquad y = \frac{\det \begin{bmatrix} a & e \\ c & f \end{bmatrix}}{\det \begin{bmatrix} a & b \\ c & d \end{bmatrix}}
+$$ I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $$
+
+8. Solving matrix equation: entry (1,2) of
+
+$$ \begin{pmatrix} 5 & 4 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} -1 & k \\ -1 & 5 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} $$
+
+gives $5k + 20 = 0$, so $k = -4$.

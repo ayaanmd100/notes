@@ -1,28 +1,13 @@
-Revenue function:  R(x) = price \times quantity
+1. Revenue = price * quantity. Both are linear, so R is quadratic.
 
-If price increases by  \Delta p, quantity decreases by  m \Delta p:
-Q = Q_0 - m(p - p_0)
-R = p \cdot Q = -mp^2 + (Q_0 + mp_0)p
+2. Maximum revenue at vertex: $p^* = -B/(2A)$ where $R = Ap^2 + Bp + C$.
 
-Maximize: vertex at  p^* = \frac{Q_0 + mp_0}{2m}
+3. Example: 360 dinners at $50, every $5 increase removes 20 customers. Solve for p giving $19600.
 
-Example (2024 \#10): 360 dinners at \$50; every \$5 increase \to 20 fewer dinners
-p = 50 + 5t, \quad Q = 360 - 20t
-R = (50+5t)(360-20t) = -100t^2 + 800t + 18000
-Vertex:  t = \frac{800}{200} = 4 \rightarrow p = \$70
-R(4) = 70 \times 280 = 19600
+$$ R = (50+5t)(360-20t) = -100t^2+800t+18000 $$
 
-Limousine example (2023 \#15): \$10/ride, 300 riders/day
-Every \$1 increase \to 15 fewer riders
-R = (10+x)(300-15x) = -15x^2 + 150x + 3000
-Vertex:  x = \frac{150}{30} = 5 \rightarrow p = \$15
+$$ t = \frac{800}{200}=4 \rightarrow p = \$70 $$
 
-AM-GM for maximizing product given sum:
-xy \le \left(\frac{x+y}{2}\right)^2  with equality when  x = y
+4. Example: $10/ride, 300 riders, $1 increase removes 15 riders.
 
-When  x + y = c,  xy  is maximized when  x = y = \frac{c}{2}:
-(xy)_{\max} = \frac{c^2}{4}
-
-Example (2018 \#9):  4x + 5y = 20, maximize  xy
-Max at  4x = 5y and 4x+5y=20 \rightarrow x=2.5,\; y=2
-xy_{\max} = 5
+$$ R = (10+x)(300-15x) = -15x^2+150x+3000 \rightarrow x=5 \rightarrow p=\$15 $$

@@ -1,26 +1,27 @@
-Factorial:  n! = n \cdot (n-1) \cdot (n-2) \cdot\cdot\cdot 2 \cdot 1, \quad 0! = 1
+1. Permutations (order matters)
 
-Permutations (order matters):  P(n,r) = \frac{n!}{(n-r)!}
+$$ P(n,r) = \frac{n!}{(n-r)!} $$
 
-Combinations (order does not matter):  C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}
+2. Combinations (order does not matter)
 
-\binom{n}{r} = \binom{n}{n-r}
+$$ \binom{n}{r} = \frac{n!}{r!(n-r)!}, \quad \binom{n}{r} = \binom{n}{n-r} $$
 
-Permutations of all 26 letters taken 4 at a time: 
-P(26,4) = 26 \cdot 25 \cdot 24 \cdot 23 = 358800
+3. 26 letters taken 4 at a time (ordered)
 
-Combinations example:  \binom{5}{3} = 10, \binom{5}{0}=1, \binom{5}{5}=1
+$$ P(26,4) = 26 \cdot 25 \cdot 24 \cdot 23 = 358800 $$
 
-k = P(5,5) = 120, \quad w = C(5,3) = 10, \quad \frac{k}{w} = 12
+4. $\binom{n}{3}$ formula
 
-C(n,3) problems:  \binom{n}{3} = \frac{n(n-1)(n-2)}{6}
+$$ \binom{n}{3} = \frac{n(n-1)(n-2)}{6} $$
 
-Distributing 12 distinct balls equally into 3 containers (4 each):
-\binom{12}{4} \cdot \binom{8}{4} \cdot \binom{4}{4} = 495 \cdot 70 \cdot 1 = 34650
+5. Passcode: 7 characters, starts with letter (3 choices), ends with number (3 choices), middle 5 are permuted
 
-Passcode: 7 characters \{X,Y,3,2,Q,7,B\; starts with letter,}
-ends with number, no repeats.
-Letters: X,Y,Q --- pick 1 for first: 3 choices
-Numbers: 3,2,7 --- pick 1 for last: 3 choices
-Middle 5 positions: arrange remaining 5:  5! = 120
-Total:  3 \times 3 \times 120 = 1080
+$$ 3 \times 5! \times 3 = 3 \times 120 \times 3 = 1080 $$
+
+6. Distributing 12 distinct balls equally into 3 containers
+
+$$ \binom{12}{4} \cdot \binom{8}{4} \cdot \binom{4}{4} = 495 \cdot 70 \cdot 1 = 34650 $$
+
+7. k/w ratio example: $k = P(5,5) = 120$, $w = \binom{5}{3} = 10$
+
+$$ \frac{k}{w} = 12 $$

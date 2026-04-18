@@ -1,23 +1,15 @@
-Converting base  b  to base 10:
-(d_n d_{n-1} \cdot\cdot\cdot d_1 d_0)_b = d_n \cdot b^n + d_{n-1} \cdot b^{n-1} + \cdot\cdot\cdot + d_1 \cdot b + d_0
+1. Converting base b to base 10
 
-Example:  (264)_b = 2b^2 + 6b + 4
+$$ (d_n \cdot\cdot\cdot d_1 d_0)_b = d_n b^n + \cdot\cdot\cdot + d_1 b + d_0 $$
 
-Example (2018 \#14):  (264)_b = (1030)_c,\; |b-c| = 5
-Digit 6 requires base \ge 7; digit 3 requires base \ge 4.
-Try valid combinations with  |b - c| = 5 and check equality.
+2. Example
 
-State 2024 \#9: find digit  m  such that  (mmmm)_{m+1} = 511_{10}
-m \cdot \sum_{k=0}^{3}(m+1)^k = 511
-m\!\left[(m+1)^3+(m+1)^2+(m+1)+1\right] = 511
-Try  m = 3:  3(64+16+4+1) = 3(85) = 255  --- no
-Try  m = 4:  4(125+25+5+1) = 4(156) = 624  --- no
-Note:  \sum_{k=0}^{3}(m+1)^k = \frac{(m+1)^4-1}{m}
-so  m \cdot \frac{(m+1)^4-1}{m} = (m+1)^4-1 = 511
-\rightarrow (m+1)^4 = 512  --- check if integer root exists
-5^4 = 625,\; 4^4 = 256 \rightarrow no integer solution; recheck problem setup
+$$ (264)_b = 2b^2+6b+4, \quad (1030)_c = c^3+3c $$
 
-Operations in base  b: carry when digit \ge b.
+3. Two-base problem: set equal, note digit constraints (digit d requires base > d).
 
-Converting base 10 to base  b: divide repeatedly by  b,
-record remainders from last to first.
+4. Same-digit four-digit number
+
+$$ (mmmm)_{m+1} = m\left[(m+1)^3+(m+1)^2+(m+1)+1\right] $$
+
+5. Converting decimal to base b: repeatedly divide by b, record remainders (bottom to top).

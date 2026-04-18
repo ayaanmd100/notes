@@ -1,39 +1,30 @@
-General form:  g(x) = a \cdot f\!\left(\frac{1}{b}(x - h)\right) + k
+1. General form: $g(x) = a \cdot f\!\left(\frac{1}{b}(x-h)\right) + k$
 
-\begin{array}{ll}
-|a| > 1 & vertical stretch by factor  |a| \\
-0 < |a| < 1 & vertical compression \\
-a < 0 & reflect over  x-axis \\
-b > 1 & horizontal stretch by factor  b \\
-0 < b < 1 & horizontal compression \\
-h > 0 & shift right by  h \\
-k > 0 & shift up by  k \\
-\end{array}
+2. Effect of each parameter:
+- $a < 0$: reflect over x-axis (max becomes min)
+- $|a| > 1$: vertical stretch
+- $b > 1$: horizontal stretch
+- $h$: shift right by h
+- $k$: shift up by k
 
-Key point  (x_0,\, y_0)  on  f  maps to  (x_1,\, y_1)  on  g:
-x_1 = b \cdot x_0 + h, \quad y_1 = a \cdot y_0 + k
+3. Key-point mapping: $(x_0, y_0)$ on f maps to $(x_1, y_1)$ on g
 
-Example (2026 \#8):  g(x) = -3f\!\left(\tfrac{1}{2}(x-6)\right) + 1
+$$ x_1 = b \cdot x_0 + h, \quad y_1 = a \cdot y_0 + k $$
 
-f  has maximum at  (-2,\, 5). Find max of  g.
-x_1 = 2(-2) + 6 = 2, \quad y_1 = -3(5) + 1 = -14
+4. Example: $g(x) = -3f\!\left(\frac{1}{2}(x-6)\right) + 1$, so $a=-3$, $b=2$, $h=6$, $k=1$.
 
-Since  a = -3 < 0, max of  f  maps to a min of  g.
-So  g  has a minimum at  (2, -14).
+f has max at (-2, 5):
 
-f  has minimum at  (4, -6):
-x_1 = 2(4) + 6 = 14, \quad y_1 = -3(-6) + 1 = 19
-g  has maximum at  (14,\, 19), so  w = 19
+$$ x_1 = 2(-2)+6 = 2, \quad y_1 = -3(5)+1 = -14 \quad (min \; of \; g, \; since \; a<0) $$
 
-Domain shift:  f(x-h)+k \rightarrow domain shifts right by  h, range shifts up by  k
+f has min at (4, -6):
 
-If  f  has domain  [-2,5], range  [-1,7]:
-f(x-2)+1 \rightarrow domain  [0,7], range  [0,8]
-a+b+c+d = 0+7+0+8 = 15
+$$ x_1 = 2(4)+6 = 14, \quad y_1 = -3(-6)+1 = 19 \quad (max \; of \; g) $$
 
-Vertex of  y = ax^2 + bx + c:
-x_v = \frac{-b}{2a} \qquad y_v = c - \frac{b^2}{4a}
+So w = 19.
 
-Maximum or minimum of quadratic:
-y_{\max/\min} = \frac{4ac - b^2}{4a}
-Maximum when  a < 0, minimum when  a > 0.
+5. Domain and range shifts for $f(x - h) + k$: domain shifts right h, range shifts up k.
+
+f on [-2,5] with range [-1,7]: $f(x-2)+1$ has domain [0,7], range [0,8].
+
+$$ a+b+c+d = 0+7+0+8 = 15 $$

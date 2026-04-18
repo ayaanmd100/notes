@@ -1,32 +1,37 @@
-(a + b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r
+1. Expansion
 
-General term:  T_{r+1} = \binom{n}{r} a^{n-r} b^r
+$$ (a+b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r $$
 
-Number of terms in  (a+b)^n:  n+1
+2. General term
 
-Sum of all coefficients: set  a = b = 1 \rightarrow 2^n
+$$ T_{r+1} = \binom{n}{r} a^{n-r} b^r $$
 
-Sum of numerical coefficients in  \left(x + \frac{1}{x}\right)^5: set  x = 1 \rightarrow 2^5 = 32
+3. Number of terms in $(a+b)^n$: $n + 1$
 
-Specific term ---  (a+b)^{22}, term  ka^wb^{20}:
-r = 20 \rightarrow T_{21} = \binom{22}{20} a^2 b^{20} = 231\,a^2 b^{20}
-k = 231,\; w = 2 \rightarrow k + w = 233
+4. Sum of all coefficients (set $a = b = 1$): $\sum_{r=0}^{n} \binom{n}{r} = 2^n$
 
-Equal consecutive terms condition:
-T_{r+1} = T_{r+2} \rightarrow \binom{n}{r} = \binom{n}{r+1}
-\rightarrow r+1 = n-r \rightarrow r = \frac{n-1}{2}
+For $(x + 1/x)^5$: set $x = 1$, sum = $2^5 = 32$.
 
-Example (2023 \#11): 5th and 6th terms of  (x+y)^n  equal
-\binom{n}{4} = \binom{n}{5} \rightarrow 5 = n - 4 \rightarrow n = 9
-3rd term:  \binom{9}{2}x^7y^2 = 36x^7y^2 \rightarrow coefficient = 36
+5. Specific term in $(a+b)^{22}$ containing $b^{20}$: $r=20$
 
-State 2022 \#9:  (2x+c)^8, 4th and 5th terms equal (numerical coefficients)
-T_4 = \binom{8}{3}(2x)^5 c^3 = 56 \cdot 32\, x^5 c^3
-T_5 = \binom{8}{4}(2x)^4 c^4 = 70 \cdot 16\, x^4 c^4
-56 \cdot 32 = 70 \cdot 16 \cdot c
-c = \frac{56 \cdot 32}{70 \cdot 16} = \frac{1792}{1120} = \frac{8}{5}
+$$ T_{21} = \binom{22}{20} a^2 b^{20} = 231\, a^2 b^{20} $$
 
-Large exponent (2020 \#17):  (2x+7)^{101}, coefficient of  x^{53}
-T_{54} = \binom{101}{53} \cdot 2^{53} \cdot x^{53} \cdot 7^{48}
+k = 231, w = 2, k + w = 233.
 
-Pascal's Triangle shortcut:  \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1}
+6. Equal consecutive terms: $T_{r+1} = T_{r+2}$
+
+$$ \binom{n}{r} = \binom{n}{r+1} \rightarrow r = \frac{n-1}{2} $$
+
+7. Example: 5th and 6th terms of $(x+y)^n$ equal
+
+$$ \binom{n}{4} = \binom{n}{5} \rightarrow n-4=5 \rightarrow n=9 $$
+
+Third term: $T_3 = \binom{9}{2} x^7 y^2 = 36\, x^7 y^2$, so coefficient = 36.
+
+8. Equal numerical coefficients in $(2x+c)^8$, terms $T_4$ and $T_5$
+
+$$ \binom{8}{3} \cdot 2^5 = \binom{8}{4} \cdot 2^4 \cdot c \rightarrow 56 \cdot 32 = 70 \cdot 16 \cdot c \rightarrow c = \frac{8}{5} $$
+
+9. Pascal's identity
+
+$$ \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} $$

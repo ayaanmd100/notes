@@ -1,25 +1,35 @@
-Pigeonhole Principle: if  n  items in  k  boxes with  n > k,
-at least one box has  \ge \lceil n/k \rceil  items.
+1. Equation-equals-1 case analysis: $(f(x))^{g(x)} = 1$
 
-Pigeonhole (2014 \#3): max holes for 200 pigeons
-\frac{k(k+1)}{2} \ge 200 \rightarrow k = 20  (since  \frac{19\cdot20}{2}=190 < 200)
-Answer:  k = 19
+- Case 1: $g(x) = 0$ (base is nonzero)
+- Case 2: $f(x) = 1$
+- Case 3: $f(x) = -1$ and $g(x)$ is even
 
-Exponential equation = 1  (2026 \#14): 
-(x^2-5x+5)^{x^2-11x+30} = 1
-Case 1: exponent = 0 \rightarrow x^2-11x+30=0 \rightarrow x=5,6
-Case 2: base = 1 \rightarrow x^2-5x+4=0 \rightarrow x=1,4
-Case 3: base = -1  and exponent even:
-x^2-5x+6=0 \rightarrow x=2,3
-x=2: exponent=12 (even);\; x=3: exponent=6 (even)
-Sum of all solutions: 1+2+3+4+5+6=21
+Example: $(x^2-5x+5)^{x^2-11x+30} = 1$
 
-Algebraic identity (2026 \#16):  X = kA+wB,\; A\ne0,\; B\ne0
-\frac{X}{AB} - \frac{X-A}{B^2} - \frac{X-B}{A^2} = 0
-Substitute and equate coefficients:  k=1,\; w=1 \rightarrow k+w=2
+Case 1: x=5,6. Case 2: x=1,4. Case 3: x=2,3 (exponents 12 and 6, both even).
 
-Median/adjusted scores (2026 \#19):
-Sorted: 62,68,73,77,78,82,86,86,90,92
-Median = \frac{78+82}{2} = 80
-Adjustment:  +\frac{80}{10} = +8  to each score
-Lowest score:  62 \to 70; percentage increase:  \frac{8}{62} \approx 12.903\%
+$$ Sum = 1+2+3+4+5+6 = 21 $$
+
+2. Pigeonhole Principle
+
+$$ \frac{k(k+1)}{2} \ge 200 \rightarrow k_{\max}=19 $$
+
+(19 holes, distinct counts 1 through 19 sum to 190)
+
+3. Greatest percentage increase for lowest score s with added amount m:
+
+$$ \frac{m}{s} \times 100 $$
+
+4. Space diagonal of rectangular box with edges a, b, c
+
+$$ d = \sqrt{a^2+b^2+c^2} $$
+
+Given face diagonals $p, q, r$: $a^2+b^2+c^2 = \frac{p^2+q^2+r^2}{2}$
+
+$$ d = \sqrt{\frac{p^2+q^2+r^2}{2}} $$
+
+5. Sum of interior angles of n-gon: $(n-2) \cdot 180$
+
+6. Exponent equation — take log of both sides when bases differ
+
+$$ a^f = b^g \rightarrow f \log a = g \log b $$

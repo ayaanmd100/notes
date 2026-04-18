@@ -1,47 +1,41 @@
-For  x^n + a_{n-1}x^{n-1} + \cdot\cdot\cdot + a_1 x + a_0 = 0  with roots  r_1, r_2, \cdot\cdot\cdot, r_n:
+1. Quadratic: $ax^2 + bx + c = 0$
 
-\sum r_i = -a_{n-1}
-\quad\quad (sum of roots = -coeff of  x^{n-1})
+$$ r_1 + r_2 = -\frac{b}{a}, \quad r_1 r_2 = \frac{c}{a} $$
 
-\sum_{i < j} r_i r_j = a_{n-2}
-\quad\quad (sum of products of pairs)
+2. Cubic: $ax^3 + bx^2 + cx + d = 0$
 
-r_1 r_2 \cdot\cdot\cdot r_n = (-1)^n a_0
-\quad\quad (product of all roots)
+$$ r_1+r_2+r_3 = -\frac{b}{a} $$
 
-For quadratic  ax^2 + bx + c = 0:
-r_1 + r_2 = -\frac{b}{a}, \quad r_1 r_2 = \frac{c}{a}
+$$ r_1r_2 + r_1r_3 + r_2r_3 = \frac{c}{a} $$
 
-For cubic  ax^3 + bx^2 + cx + d = 0:
-r_1+r_2+r_3 = -\frac{b}{a}
-r_1 r_2 + r_1 r_3 + r_2 r_3 = \frac{c}{a}
-r_1 r_2 r_3 = -\frac{d}{a}
+$$ r_1r_2r_3 = -\frac{d}{a} $$
 
-Sum of squares of roots:
-r_1^2+r_2^2+r_3^2 = (r_1+r_2+r_3)^2 - 2(r_1r_2+r_1r_3+r_2r_3)
+3. Sum of squares of roots
 
-Absolute difference of roots (quadratic):
-|r_1 - r_2| = \frac{\sqrt{b^2 - 4ac}}{|a|}
+$$ r_1^2+r_2^2+r_3^2 = (r_1+r_2+r_3)^2 - 2(r_1r_2+r_1r_3+r_2r_3) $$
 
-Reciprocal roots: if  r  is a root of  f(x), then  \frac{1}{r}
-is a root of  x^n f\!\left(\frac{1}{x}\right)
-\rightarrow reverse the coefficient list
+4. Building polynomial from roots $r_1, r_2, r_3$:
 
-Conjugate pairs: complex roots of real-coefficient polynomials
-come in conjugate pairs.
+$$ x^3 - (r_1+r_2+r_3)x^2 + (r_1r_2+r_1r_3+r_2r_3)x - r_1r_2r_3 = 0 $$
 
-Common root of two polynomials: subtract to reduce degree,
-then find the root.
+5. Reciprocal roots: reverse the coefficient list.
 
-Example (2024 \#8):  x^3+kx^2-3x+4=0  and  x^3+kx^2-5x+8=0
-Subtract:  2x - 4 = 0 \rightarrow x = 2
-Sub back:  8 + 4k - 10 + 8 = 0 \rightarrow k = -\frac{3}{2}
+6. Common root — subtract equations. Example: $x^3+kx^2-3x+4=0$ and $x^3+kx^2-5x+8=0$.
 
-Remainder Theorem:  f(x) \div (x - c)  has remainder  f(c).
+Subtract: $2x-4=0 \rightarrow x=2$
 
-Factor Theorem:  (x-c)  is a factor \rightarrow  f(c) = 0
+$$ 8+4k-6+4=0 \rightarrow k=-\frac{3}{2} $$
 
-Rational Root Theorem: possible rational roots = \pm\frac{factors of constant}{factors of leading coeff}
+7. Remainder Theorem: remainder of $f(x)/(x-c)$ equals $f(c)$.
 
-Polynomial with given zeros  z_1, z_2, \cdot\cdot\cdot, z_n  (leading coeff 1):
-f(x) = (x - z_1)(x - z_2) \cdot\cdot\cdot (x - z_n)
+8. Factor Theorem: $(x-c)$ is a factor iff $f(c) = 0$.
+
+9. Two factors known: substitute both roots, solve 2x2 system.
+
+Example: $kx^3+wx^2-5x+84$, factors $(x-7)$ and $(x-4)$
+
+$$ f(7) = 0 \rightarrow 343k+49w = -49 \rightarrow 7k+w=-1 $$
+
+$$ f(4) = 0 \rightarrow 64k+16w=-64 \rightarrow 4k+w=-4 $$
+
+$$ 3k=3 \rightarrow k=1, \quad w=-8 $$

@@ -1,53 +1,37 @@
-Definition:  \log_b(x) = n \rightarrow  b^n = x
+1. Definition: $\log_b x = n$ if and only if $b^n = x$
 
-Common log:  \log(x) = \log_{10}(x)
-Natural log:  \ln(x) = \log_e(x)
+2. Log rules
 
-Product rule:  \log_b(xy) = \log_b x + \log_b y
+$$ \log_b(xy) = \log_b x + \log_b y $$
 
-Quotient rule:  \log_b\!\left(\frac{x}{y}\right) = \log_b x - \log_b y
+$$ \log_b \left( \frac{x}{y} \right) = \log_b x - \log_b y $$
 
-Power rule:  \log_b(x^n) = n \log_b x
+$$ \log_b(x^n) = n \log_b x $$
 
-Change of base:  \log_b a = \frac{\log a}{\log b} = \frac{\ln a}{\ln b}
+Change of base:
 
-\log_b(1) = 0, \quad \log_b(b) = 1, \quad b^{\log_b(x)} = x
+$$ \log_b a = \frac{\log a}{\log b} $$
 
-\log(1) = 0, \quad \log(10) = 1, \quad \ln(e) = 1
+3. Key values
 
-\ln(\exp(x)) = x, \quad \exp(\ln(x)) = x
+$$ \log 2 \approx 0.30103, \quad \log 3 \approx 0.47712, \quad \log 7 \approx 0.84510 $$
 
-Key values (memorize):
-\log 2 \approx 0.30103, \quad \log 3 \approx 0.47712, \quad \log 7 \approx 0.84510
+$$ \log 5 = 1 - \log 2 \approx 0.69897 $$
 
-\log 5 = \log\!\left(\frac{10}{2}\right) = 1 - \log 2 \approx 0.69897
+$$ \log 4 = 2\log 2, \quad \log 6 = \log 2 + \log 3, \quad \log 8 = 3\log 2 $$
 
-\log 4 = 2\log 2, \quad \log 6 = \log 2 + \log 3, \quad \log 8 = 3\log 2
+4. If $\log_x 7 = p$, $\log_x 3 = q$, $\log_x 5 = r$, find $\log_x 4.2$:
 
-\log 9 = 2\log 3, \quad \log 12 = 2\log 2 + \log 3
+$$ \log_x 4.2 = \log_x \left( \frac{2 \cdot 3 \cdot 7}{2 \cdot 5} \right) = q + p - r $$
 
-Expressing in terms of given logs:
-If  \log_x 7 = p,\; \log_x 3 = q,\; \log_x 5 = r, then:
-\log_x 4.2 = \log_x\!\left(\frac{42}{10}\right)
-= \log_x(2 \cdot 3 \cdot 7) - \log_x(2 \cdot 5)
-= \log_x 3 + \log_x 7 - \log_x 5
-= q + p - r
+5. Solving log equations
 
-Logarithm equations --- isolate, then exponentiate:
-2\log k = 9 \rightarrow \log k = \frac{9}{2} \rightarrow k = 10^{4.5}
+$$ 2\log k = 9 \rightarrow k = 10^{4.5} $$
 
-\log k = 20 \rightarrow k = 10^{20}
-Remainder of  k \div 6: use  10^{20}  mod  6
-10 \equiv 4 (mod  6 ),\; 10^2 \equiv 4 (mod  6 ),\; so  10^{20} \equiv 4 (mod  6 )
+6. Remainder: log k = 20, so $k = 10^{20}$. Since 10 mod 6 = 4 and $4^n$ mod 6 = 4 for all n:
 
-Exponential equations --- take log of both sides:
-4^{6k+2} = 16^k \rightarrow 2^{2(6k+2)} = 2^{4k} \rightarrow 12k+4 = 4k \rightarrow k = -\frac{1}{2}
+$$ 10^{20} \equiv 4 \quad (mod \; 6) $$
 
-Natural log to solve:  10 = (20)(2^{2x})
-\rightarrow 2^{2x} = \frac{1}{2} \rightarrow 2x = -1 \rightarrow x = -\frac{1}{2}
+7. Exponential equation — convert to same base
 
-Equal bases: set exponents equal.
-Otherwise: take log of both sides and apply the power rule.
-
-Chain rule of logs:
-\log_a(b) \cdot \log_b(c) = \log_a(c)
+$$ 4^{6k+2} = 16^k \rightarrow 2^{12k+4} = 2^{4k} \rightarrow 8k = -4 \rightarrow k = -\frac{1}{2} $$

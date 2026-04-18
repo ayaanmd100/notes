@@ -1,19 +1,21 @@
-a \equiv b (mod  m ) \rightarrow  m | (a - b)
+1. Congruence: a is congruent to b mod m when m divides (a-b).
 
-(a + b)  mod  m = ((a  mod  m) + (b  mod  m))  mod  m
+2. Units digit cycles:
+- base 2: 2,4,8,6 (period 4)
+- base 3: 3,9,7,1 (period 4)
+- base 7: 7,9,3,1 (period 4)
+- base 9: 9,1 (period 2)
+- base 5: 5 (period 1)
+- base 4: 4,6 (period 2)
 
-(a \cdot b)  mod  m = ((a  mod  m) \cdot (b  mod  m))  mod  m
+3. Example: units digit of $3^{33} + 5^{55} + 7^{77} + 9^{99}$
 
-10 \equiv 4 (mod  6 ), \quad 10^2 \equiv 4 (mod  6 ), \quad 10^n \equiv 4 (mod  6 ) \quad (n \ge 1)
+33 mod 4 = 1, so $3^{33}$ ends in 3.
+77 mod 4 = 1, so $7^{77}$ ends in 7.
+99 mod 2 = 1, so $9^{99}$ ends in 9.
 
-Units digit of  (3^{33}+5^{55}+7^{77}+9^{99}):
-Cycle of 3:  3,9,7,1  (period 4)  \rightarrow 3^{33}=3^{4\cdot8+1} \to 3
-Cycle of 5: always 5
-Cycle of 7:  7,9,3,1  (period 4)  \rightarrow 7^{77}=7^{4\cdot19+1} \to 7
-Cycle of 9:  9,1  (period 2)  \rightarrow 9^{99} \to 9
-Units digit:  3+5+7+9=24 \rightarrow units digit = 4
+$$ 3+5+7+9=24 \rightarrow units \; digit = 4 $$
 
-Remainder of  mn+m+n \div 8  (2022 \#14):
-n \equiv 1 (mod  16 ) \rightarrow n \equiv 1 (mod  8 )
-m \equiv 4 (mod  24 ) \rightarrow m \equiv 4 (mod  8 )
-mn + m + n \equiv 4 + 4 + 1 = 9 \equiv 1 (mod  8 )
+4. Remainder of $mn+m+n$ when $n \equiv 1$ (mod 8) and $m \equiv 4$ (mod 8)
+
+$$ mn+m+n \equiv 4+4+1=9 \equiv 1 \quad (mod \; 8) $$

@@ -1,20 +1,15 @@
-Substitution: solve one equation for one variable, substitute.
-Elimination: add/subtract equations to eliminate a variable.
-Matrix method:  AX = B \rightarrow X = A^{-1}B
+1. Shoelace formula for area of polygon (vertices listed in order, indices mod n)
 
-Nonlinear system (2014 \#9): 
-x + y = y + 5 \rightarrow x = 5
-x + y = 20 \rightarrow y = 15 \rightarrow (5,15)
+$$ A = \frac{1}{2} \left| \sum_{i=1}^{n} (x_i y_{i+1} - x_{i+1} y_i) \right| $$
 
-Area of polygonal region from inequality system:
-1. Find all boundary lines.
-2. Solve pairs to get vertices.
-3. Apply Shoelace Formula:
-A = \frac{1}{2}\left|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1} y_i)\right| \quad (indices   mod    n)
+2. AM-GM: maximize product given fixed linear constraint. Equality when both terms are equal.
 
-Example (2018 \#20):  x+y \le 5,\; 2x-y \ge -4,\; x \ge 0,\; y \ge 0
-Find vertices, apply Shoelace.
+Example: $4x + 5y = 20$, maximize $xy$. Set $4x = 5y$ and $4x+5y=20$:
 
-Diophantine integer solutions (2026 \#11):  5x + 16y = 38
-Need  38 - 16y \equiv 0 (mod  5 ) \rightarrow 3 - y \equiv 0 (mod  5 ) \rightarrow y \equiv 3 (mod  5 )
-y = 3:  x = 2;\quad y = -2:  x = 14;\quad y = 8:  x = -10;\quad \cdot\cdot\cdot
+$$ x=2.5, \; y=2 \rightarrow xy_{\max}=5 $$
+
+3. Diophantine: $ax + by = c$ integer solutions. Find one solution, then parameterize.
+
+For $5x + 16y = 38$: need $38 - 16y$ divisible by 5, so $y \equiv 3$ (mod 5).
+
+y=3 gives x=2; y=-2 gives x=14; y=8 gives x=-10.

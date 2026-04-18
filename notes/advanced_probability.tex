@@ -1,35 +1,29 @@
-Binomial probability:
-\Pr(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+1. Binomial probability
 
-Expected value:  E(X) = np
+$$ \Pr(X=k) = \binom{n}{k} p^k (1-p)^{n-k} $$
 
-Coin toss (2023 \#16): exactly 5 heads in 10 tosses,  p = \frac{1}{2}
-\Pr(X=5) = \binom{10}{5}\!\left(\frac{1}{2}\right)^{10} = \frac{252}{1024} = \frac{63}{256}
+2. Coin: exactly 5 heads in 10 flips
 
-True/false quiz (State 2024 \#15): 10 questions, score exactly 7,  p = \frac{1}{2}
-\Pr(X=7) = \binom{10}{7}\!\left(\frac{1}{2}\right)^{10} = \frac{120}{1024} = \frac{15}{128}
+$$ \Pr(X=5) = \binom{10}{5} \left(\frac{1}{2}\right)^{10} = \frac{252}{1024} = \frac{63}{256} $$
 
-Conditional probability:  \Pr(A | B) = \frac{\Pr(A \cap B)}{\Pr(B)}
+3. Quiz: 10 true/false questions, exactly 7 correct
 
-Independent events:  \Pr(A \cap B) = \Pr(A) \cdot \Pr(B)
+$$ \Pr(X=7) = \binom{10}{7} \left(\frac{1}{2}\right)^{10} = \frac{120}{1024} = \frac{15}{128} $$
 
-Mutually exclusive:  \Pr(A \cap B) = 0, so  \Pr(A \cup B) = \Pr(A) + \Pr(B)
+4. Conditional probability
 
-Geometric distribution (first success on trial  k):
-\Pr(X = k) = (1-p)^{k-1} p
+$$ \Pr(A | B) = \frac{\Pr(A \cap B)}{\Pr(B)} $$
 
-Sum of geometric series in probability:
-\Pr(win) = p + (1-p)^2 p + (1-p)^4 p + \cdot\cdot\cdot = \frac{p}{1-(1-p)^2}
+5. Turn-based game (Molly p=3/5 vs Connie q=3/4, Molly first)
 
-Subsets of a set with  n  elements:  2^n  (including empty set)
-S = \{A,L,G,T,W,O\},  |S| = 6 \rightarrow 2^6 = 64  subsets
+$$ \Pr(Molly \; wins) = \frac{p}{1-(1-p)(1-q)} = \frac{3/5}{1-(2/5)(1/4)} = \frac{3/5}{9/10} = \frac{2}{3} $$
 
-Letter probability (2026 \#17):  (2,k)  chosen from 
-\{(2,3),(2,5),(2,7),(2,11),(2,13),(2,17)\}
-Test  4 + k^2  prime:
-k=3: 13,\; k=5: 29,\; k=7: 53
-k=11: 125=5^3 \times,\; k=13: 173,\; k=17: 293
-\Pr = \frac{5}{6}
+6. Number of subsets of n-element set: $2^n$
 
-Inclusion-exclusion:
-\Pr(A \cup B) = \Pr(A) + \Pr(B) - \Pr(A \cap B)
+For $S = \{A,L,G,T,W,O\}$: $2^6 = 64$ subsets.
+
+7. Probability $4 + k^2$ is prime, k chosen from {3,5,7,11,13,17}:
+
+Prime when k=3 (13), k=5 (29), k=7 (53), k=13 (173), k=17 (293). k=11 gives 125 = $5^3$, not prime.
+
+$$ \Pr = \frac{5}{6} $$

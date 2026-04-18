@@ -1,15 +1,13 @@
-|A \cup B| = |A| + |B| - |A \cap B|
+1. Inclusion-exclusion
 
-|A \cup B \cup C| = |A|+|B|+|C| - |A\cap B| - |A\cap C| - |B\cap C| + |A\cap B\cap C|
+$$ |A \cup B| = |A|+|B|-|A \cap B| $$
 
-A^c = complement of  A  (elements not in  A)
+$$ |A \cup B \cup C| = |A|+|B|+|C|-|A \cap B|-|A \cap C|-|B \cap C|+|A \cap B \cap C| $$
 
-|A^c| = |U| - |A|
+2. Complement: $|A^c| = |U| - |A|$
 
-Subsets of  S:  2^{|S|}
+3. Number of subsets: $2^n$ (includes empty set)
 
-Power set of  \{A,L,G,T,W,O\}:  2^6 = 64
+4. Example: 52 students, 24 A in math, 10 A in science, 5 both
 
-Venn example (2020 \#2): 52 students
-|M \cup S| = |M| + |S| - |M \cap S| = 24 + 10 - 5 = 29
-|neither| = 52 - 29 = 23
+$$ neither = 52-(24+10-5) = 23 $$
